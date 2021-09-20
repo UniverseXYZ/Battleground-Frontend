@@ -1,7 +1,6 @@
 import React from 'react';
 import './WagerETH.scss';
-import Button from '../../button/Button';
-import wagerImg from '../../../assets/images/wagerIllustration.png';
+import wagerImg from '../../../assets/images/landingPage/wagerIllustration.png';
 
 const WagerETH = () => (
   <div className="wagerETH-section">

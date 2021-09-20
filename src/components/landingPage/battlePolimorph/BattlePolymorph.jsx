@@ -1,7 +1,7 @@
 import React from 'react';
 import './BattlePolymorph.scss';
-import battlePolymorphCharacters from '../../../assets/images/battle-your-polymorph-section.png';
-import borderEffect from '../../../assets/images/cut-border.png';
+import battlePolymorphCharacters from '../../../assets/images/landingPage/battle-your-polymorph-section.png';
+import borderEffect from '../../../assets/images/landingPage/cut-border.png';
 
 const BattlePolymorph = () => (
   <div className="battle--your--polymorph">
