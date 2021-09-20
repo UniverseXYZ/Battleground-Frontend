@@ -1,0 +1,34 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+button {
+  font-family: $spaceGroteskFont;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  border-radius: 5px 15px;
+  &.primary {
+    background: linear-gradient(180deg, #bceb00 0%, #00eaea 100%), linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
+    color: $black;
+    font-size: 18px;
+    &:hover {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+        linear-gradient(180deg, #bceb00 0%, #00eaea 100%), linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
+    }
+  }
+  &.secondary {
+    background-image: linear-gradient(135deg, #bceb00 15.57%, #00eaea 84.88%);
+    background-origin: border-box;
+    box-shadow: 2px 1000px 1px #13254d inset;
+    border: 2px solid transparent;
+    color: $white;
+    font-size: 14px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
