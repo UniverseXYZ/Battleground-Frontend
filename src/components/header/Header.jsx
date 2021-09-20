@@ -7,9 +7,7 @@ import connectWalletIcon from '../../assets/images/icons/plus.svg';
 
 const Header = () => (
   <header>
-    <div className="back--btn">
-      <GoBack text="Home" />
-    </div>
+    <div className="back--btn">{/* <GoBack text="Home" /> */}</div>
     <div className="logo">
       <img src={appLogo} alt="App logo" />
     </div>
