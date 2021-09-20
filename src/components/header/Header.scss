@@ -1,2 +1,46 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 16px 40px;
+  background: linear-gradient(90deg, #17274C 0%, #11234D 48.53%, #17274C 100%);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    img {
+      min-width: 253px;
+    }
+    // position: relative;
+    // max-width: 293px;
+    // width: 100%;
+    // height: 76px;
+    // img {
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   bottom: -10px;
+    // }
+    // @include sm {
+    //   max-width: 253px;
+    // }
+    // @include xs {
+    //   max-width: 203px;
+    // }
+  }
+  .connect--wallet--btn {
+    margin-right: 12px;
+  }
+  @include sm {
+    padding: 16px 20px;
+  }
+}

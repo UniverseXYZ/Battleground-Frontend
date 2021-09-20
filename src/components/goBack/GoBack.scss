@@ -1,0 +1,21 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+button.go--back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  span {
+    font-family: $spaceGroteskFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
+    margin-left: 8px;
+    @include sm {
+      display: none;
+    }
+  }
+}
