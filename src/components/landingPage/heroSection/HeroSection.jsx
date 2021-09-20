@@ -8,7 +8,7 @@ const HeroSection = () => (
       <h1>Polymorphic Battle Universe</h1>
       <p>Wager ETH and go head to head with other Polymorph owners in the Universe.</p>
       <div className="battle-button-section">
-        <Button variant="primary">Battle now</Button>
+        <Button variant="primary" text="Battle now" />
       </div>
     </div>
   </div>
