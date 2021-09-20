@@ -1,0 +1,113 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.how__to__play {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #172242 2.6%, #0b142c 23.96%, #0b142c 79.69%, #172242 100%);
+
+  h1 {
+    font-family: $orbitronFont;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 120%;
+    text-align: center;
+    color: $white;
+    margin-bottom: 110px;
+  }
+
+  .play__content {
+    &__item {
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        opacity: 0.4;
+
+        h2 {
+          font-family: $orbitronFont;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 130%;
+          color: $white;
+          margin: 0%;
+        }
+        .toggle {
+          position: relative;
+          .horizontal {
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            top: 50%;
+            right: 0;
+            transform: translate(0%, -50%);
+            background: $white;
+          }
+          .vertical {
+            position: absolute;
+            height: 20px;
+            width: 2px;
+            top: 50%;
+            right: 9px;
+            transform: translate(0%, -50%);
+            background: #ffffff;
+          }
+        }
+        &.active {
+          opacity: 1;
+        }
+      }
+      &__body {
+        display: none;
+        grid-template-columns: auto auto;
+        grid-gap: 30px;
+        overflow: hidden;
+        margin-top: 30px;
+
+        &.open {
+          display: grid;
+          @include md {
+            grid-template-columns: auto;
+          }
+        }
+
+        .desc {
+          font-family: $spaceGroteskFont;
+          font-weight: normal;
+          font-style: normal;
+          font-size: 16px;
+          line-height: 160%;
+          color: rgba(255, 255, 255, 0.6);
+          max-width: 350px;
+
+          @include md {
+            max-width: 100%;
+          }
+        }
+        img {
+          @include md {
+            width: 100%;
+          }
+        }
+      }
+      &:first-child {
+        padding: 0 0 40px;
+      }
+      &:last-child {
+        border-bottom: none;
+        padding: 40px 0 0;
+      }
+    }
+  }
+
+  @include lg {
+    padding: 80px 60px;
+  }
+  @include sm {
+    padding: 60px 23px 80px;
+  }
+}
