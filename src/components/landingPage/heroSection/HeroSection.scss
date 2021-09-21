@@ -10,6 +10,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
+    .audio-icon{
+        position: absolute;
+        left: 25px;
+        bottom: 35px;
+        @include md {
+            display: none;
+        }
+    }
     .hero-section-container{
         h1{
             font-family: $orbitronFont;
