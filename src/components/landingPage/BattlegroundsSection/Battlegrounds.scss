@@ -1,0 +1,31 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.battlegrounds--section {
+  padding: 60px 0 120px;
+  background: #172242;
+  .title {
+    font-family: $orbitronFont;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 120%;
+    text-align: center;
+    color: $white;
+    margin-top: 0px;
+    margin-bottom: 60px;
+    @include md {
+      font-size: 42px;
+    }
+    @include sm {
+      font-size: 32px;
+    }
+  }
+  .battlegrounds--button--section {
+    display: flex;
+    justify-content: center;
+  }
+  @include sm {
+    padding: 60px 0;
+  }
+}
