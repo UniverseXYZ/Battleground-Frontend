@@ -1,0 +1,91 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.wagerETH-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 760px;
+    padding: 0 60px;
+    background-image: url("../../../assets/images/landingPage/wagerBackground.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .wager-img{
+        margin-right: 140px;
+        img{
+        width: 537px;
+        height: 537px;
+       @include md{
+            width: 392px;
+            height: 392px;   
+        }
+        @include sm{
+            width: 333px;
+            height: 333px;
+        }
+    }
+    h1{
+        font-family: $orbitronFont;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 42px;
+        line-height: 120%;
+        color: #FFFFFF;
+        display: none;
+        @include md {
+            display: block;
+            margin-top: 0;
+        }
+        @include sm {
+            font-size: 32px;
+        }
+        }
+    @include md{
+        margin-right: unset;
+        margin-bottom: 18px;
+    }
+    }
+    .wagerETH-container{
+        h1{
+            font-family: $orbitronFont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 46px;
+            line-height: 120%;
+            color: #FFFFFF;
+            
+            @include md {
+                display: none;
+            }
+            }
+        p{
+            max-width: 445px;
+            font-family: $spaceGroteskFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 160%;
+            color: #FFFFFF;
+            opacity: 0.8;
+            @include md {
+                max-width: 530px;
+            }
+            @include sm {
+                max-width: 335px;
+            }
+        }
+        @include md{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    @include md {
+       display: block;
+       text-align: center;
+    }
+    @include sm {
+        padding: 0 20px;
+    }
+}
