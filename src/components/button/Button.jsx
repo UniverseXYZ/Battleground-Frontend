@@ -4,7 +4,7 @@ import './Button.scss';
 import leftShape from '../../assets/images/secondary-button-left.png';
 import rightShape from '../../assets/images/secondary-button-right.png';
 
-const Button = ({ variant, icon, text, hideTextOnMobile, ...restProps }) => {
+const Button = ({ variant, icon, text, hideTextOnMobile, showIconOnMobileOnly, ...restProps }) => {
   const classNames = restProps.className;
   delete restProps.className;
   return (
@@ -15,7 +15,7 @@ const Button = ({ variant, icon, text, hideTextOnMobile, ...restProps }) => {
     >
       {icon && (
         <img
-          className="icon"
+          className={`icon${showIconOnMobileOnly ? ' show--on--mobile--only' : ''}`}
           style={{ marginRight: text ? '11px' : '0px' }}
           src={icon}
           alt="icon"
@@ -37,11 +37,13 @@ Button.propTypes = {
   icon: PropTypes.string,
   text: PropTypes.string.isRequired,
   hideTextOnMobile: PropTypes.bool,
+  showIconOnMobileOnly: PropTypes.bool,
 };
 
 Button.defaultProps = {
   icon: null,
   hideTextOnMobile: false,
+  showIconOnMobileOnly: false,
 };
 
 export default Button;
