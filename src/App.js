@@ -8,7 +8,7 @@ import LandingPage from './containers/landingPage/LandingPage.jsx';
 
 const App = () => {
   const location = useLocation();
-  const [isWalletConnected, setIsWalletConnected] = useState(true);
+  const [isWalletConnected, setIsWalletConnected] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
