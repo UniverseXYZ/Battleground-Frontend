@@ -21,7 +21,7 @@ const Footer = () => (
           <h1>Subscribe to our mailing list</h1>
           <div>
             <input placeholder="Enter your email" />
-            <Button variant="primary">Subscribe</Button>
+            <Button variant="primary" text="Subscribe" />
           </div>
           <p>
             I agree to receive emails, including company and industry updates and promotional
