@@ -9,6 +9,7 @@ import Input from '../input/Input';
 
 const Footer = () => (
   <div className="footer-section">
+    <div className="horizontal--gradient" />
     <div className="footer-section-up">
       <div className="container footer-section-up-container">
         <div className="left-section">

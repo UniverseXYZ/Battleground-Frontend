@@ -49,6 +49,12 @@ button {
     }
   }
   img.icon {
+    &.show--on--mobile--only {
+      display: none;
+      @include sm {
+        display: block;
+      }
+    }
     margin-right: 11px;
   }
   .left--shape {
