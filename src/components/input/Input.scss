@@ -1,0 +1,42 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.input--wrapper {
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  &:after {
+    content: "";
+    position:absolute;
+    left: -8px;
+    bottom: -8px;
+    width:15px;
+    height:15px;
+    transform:rotate(45deg);
+    background: inherit;
+  }
+  &:before {
+    content: "";
+    position:absolute;
+    right: -8px;
+    top: -8px;
+    width:15px;
+    height:15px;
+    transform:rotate(45deg);
+    background: inherit;
+  }
+  input {
+    width: 100%;
+    padding: 14px;
+    font-family: $spaceGroteskFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: $black;
+    &::placeholder {
+      color: rgba(32, 38, 59, 0.4);
+    }
+  }
+}

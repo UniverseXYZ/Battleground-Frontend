@@ -5,6 +5,7 @@ import Button from '../button/Button';
 import inIcon from '../../assets/images/icons/in.svg';
 import twitter from '../../assets/images/icons/twitter.svg';
 import fb from '../../assets/images/icons/fbIcon.svg';
+import Input from '../input/Input';
 
 const Footer = () => (
   <div className="footer-section">
@@ -20,7 +21,7 @@ const Footer = () => (
         <div className="right-section">
           <h1>Subscribe to our mailing list</h1>
           <div>
-            <input placeholder="Enter your email" />
+            <Input placeholder="Enter your email" cornerColor="#0a132d" />
             <Button variant="primary" text="Subscribe" />
           </div>
           <p>
