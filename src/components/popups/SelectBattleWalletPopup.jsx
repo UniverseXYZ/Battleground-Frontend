@@ -8,6 +8,7 @@ import coinbaseLogo from '../../assets/images/coinbase-logo.png';
 import walletConnectLogo from '../../assets/images/walletconnect-logo.png';
 import subtractLeft from '../../assets/images/icons/subtract-left.svg';
 import subtractRight from '../../assets/images/icons/subtract-right.svg';
+import closeIcon from '../../assets/images/icons/cross.svg';
 import './PopupStyles.scss';
 
 const SelectBattleWalletPopup = ({ close }) => {
@@ -16,6 +17,11 @@ const SelectBattleWalletPopup = ({ close }) => {
     <div className="select__battle__wallet__container">
       <img className="border__img__left" src={subtractLeft} alt="Subtract" />
       <img className="border__img__right" src={subtractRight} alt="Subtract" />
+      <div className="close__button__div" onClick={close} aria-hidden="true">
+        <div className="close__button__color">
+          <img src={closeIcon} alt="Close" />
+        </div>
+      </div>
       <div className="select__battle__wallet__popup__border">
         <div className="select__battle__wallet__popup">
           <h1>Select wallet</h1>
