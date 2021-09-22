@@ -5,43 +5,12 @@
   position: relative;
   background: #172242;
   padding: 56px 60px;
-  .battle--your--polymorph--section {
+  .battle--polimorph--borders {
     position: relative;
-    background: #223361;
-    border: 1px solid rgba(40, 97, 147, 0.5);
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    color: $white;
-    margin-top: -140px;
-    &:after {
-      content: "";
-      position: absolute;
-      top: -12px;
-      left: -9px;
-      width: 20px;
-      height: 30px;
-      transform: rotate(43deg);
-      background-color: #172242;
-      border-right: 2px solid rgba(40, 97, 147, 0.5);
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: -12px;
-      right: -9px;
-      width: 20px;
-      height: 30px;
-      transform: rotate(43deg);
-      background-color: #172242;
-      border-left: 2px solid rgba(40, 97, 147, 0.5);
-    }
     .top-left-bg {
       position: absolute;
-      left: -7px;
-      top: -7.5px;
+      left: -6px;
+      top: -6.5px;
       width: 92px;
       height: 92px;
       transform: rotate(180deg);
@@ -49,78 +18,120 @@
     }
     .bottom-right-bg {
       position: absolute;
-      bottom: -7.5px;
-      right: -7px;
+      bottom: -6.5px;
+      right: -6px;
       width: 92px;
       height: 92px;
       z-index: 100;
     }
-    .battle--your--polymorph--desc {
-      padding: 124px 0 124px 94px;
-      .title {
-        font-family: $orbitronFont;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 46px;
-        line-height: 120%;
-        color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 10px;
+      width: 1px;
+      height: 29px;
+      transform: rotate(44deg);
+      background-color: #254a7a;
+      z-index: 111;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      right: 10px;
+      width: 1px;
+      height: 29px;
+      transform: rotate(44deg);
+      background-color: #254a7a;
+      z-index: 111;
+    }
+    .battle--your--polymorph--section {
+      position: relative;
+      background: #223361;
+      border: 1px solid rgba(40, 97, 147, 0.5);
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      color: $white;
+      margin-top: -140px;
+      clip-path: polygon(
+        0% 15px,
+        15px 0%,
+        calc(100% + 1px) 0%,
+        calc(100% + 1px) calc(100% - 15px),
+        calc(100% - 15px) calc(100% + 1px),
+        0% calc(100% + 1px)
+      );
+      .battle--your--polymorph--desc {
+        padding: 124px 0 124px 94px;
+        .title {
+          font-family: $orbitronFont;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 46px;
+          line-height: 120%;
+          color: $white;
+          @include md {
+            text-align: center;
+            font-size: 42px;
+          }
+          @include sm {
+            font-size: 32px;
+            text-align: center;
+          }
+        }
+        > p {
+          font-family: $spaceGroteskFont;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 160%;
+          opacity: 0.8;
+          max-width: 344px;
+          @include md {
+            display: none;
+          }
+        }
         @include md {
-          text-align: center;
-          font-size: 42px;
+          padding: 83px 94px 0;
         }
         @include sm {
-          font-size: 32px;
-          text-align: center;
+          padding: 44px 30px 0;
         }
       }
-      > p {
+      .battle--your--polymorph--characters {
+        padding-right: 10px;
+        @include md {
+          padding: 0 139px;
+        }
+        @include sm {
+          padding: 0 18px;
+        }
+      }
+      .desc-mobile {
+        display: none;
         font-family: $spaceGroteskFont;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 160%;
         opacity: 0.8;
-        max-width: 344px;
+        text-align: center;
         @include md {
-          display: none;
+          display: block;
+          padding: 0 93px 82px;
+          margin: 0;
+        }
+        @include sm {
+          padding: 0 18px 42px;
         }
       }
       @include md {
-        padding: 83px 94px 0;
+        grid-template-columns: 1fr;
       }
-      @include sm {
-        padding: 44px 30px 0;
-      }
-    }
-    .battle--your--polymorph--characters {
-      padding-right: 10px;
-      @include md {
-        padding: 0 139px;
-      }
-      @include sm {
-        padding: 0 18px;
-      }
-    }
-    .desc-mobile {
-      display: none;
-      font-family: $spaceGroteskFont;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 160%;
-      opacity: 0.8;
-      text-align: center;
-      @include md {
-        display: block;
-        padding: 0 93px 82px;
-        margin: 0;
-      }
-      @include sm {
-        padding: 0 18px 42px;
-      }
-    }
-    @include md {
-      grid-template-columns: 1fr;
     }
   }
   @include sm {
