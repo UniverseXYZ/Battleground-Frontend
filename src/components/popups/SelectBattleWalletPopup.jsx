@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import metamaskLogo from '../../assets/images/metamask-logo.png';
 import ledgerLogo from '../../assets/images/ledger-logo.png';
@@ -10,49 +10,92 @@ import subtractLeft from '../../assets/images/icons/subtract-left.svg';
 import subtractRight from '../../assets/images/icons/subtract-right.svg';
 import closeIcon from '../../assets/images/icons/cross.svg';
 import './PopupStyles.scss';
+import Button from '../button/Button';
+import AppContext from '../../ContextAPI';
 
 const SelectBattleWalletPopup = ({ close }) => {
-  const [variable, setVariable] = useState();
+  const { setIsWalletConnected } = useContext(AppContext);
+
   return (
     <div className="select__battle__wallet__container">
       <img className="border__img__left" src={subtractLeft} alt="Subtract" />
       <img className="border__img__right" src={subtractRight} alt="Subtract" />
       <div className="close__button__div" onClick={close} aria-hidden="true">
-        <div className="close__button__color">
-          <img src={closeIcon} alt="Close" />
-        </div>
+        <Button variant="primary" icon={closeIcon} />
       </div>
       <div className="select__battle__wallet__popup__border">
         <div className="select__battle__wallet__popup">
           <h1>Select wallet</h1>
           <p className="wallet__text">Please pick a wallet to connect to Battle Universe</p>
           <div className="wallets">
-            <div className="wallet__border">
+            <div
+              className="wallet__border"
+              aria-hidden="true"
+              onClick={() => {
+                setIsWalletConnected(true);
+                close();
+              }}
+            >
               <div className="wallet__item">
                 <img src={metamaskLogo} alt="Metamask" />
               </div>
             </div>
-            <div className="wallet__border">
+            <div
+              className="wallet__border"
+              aria-hidden="true"
+              onClick={() => {
+                setIsWalletConnected(true);
+                close();
+              }}
+            >
               <div className="wallet__item">
                 <img src={ledgerLogo} alt="Ledger" />
               </div>
             </div>
-            <div className="wallet__border">
+            <div
+              className="wallet__border"
+              aria-hidden="true"
+              onClick={() => {
+                setIsWalletConnected(true);
+                close();
+              }}
+            >
               <div className="wallet__item">
                 <img src={portisLogo} alt="Portis" />
               </div>
             </div>
-            <div className="wallet__border">
+            <div
+              className="wallet__border"
+              aria-hidden="true"
+              onClick={() => {
+                setIsWalletConnected(true);
+                close();
+              }}
+            >
               <div className="wallet__item">
                 <img src={trezorLogo} alt="Trezor" />
               </div>
             </div>
-            <div className="wallet__border">
+            <div
+              className="wallet__border"
+              aria-hidden="true"
+              onClick={() => {
+                setIsWalletConnected(true);
+                close();
+              }}
+            >
               <div className="wallet__item">
                 <img src={coinbaseLogo} alt="Coinbase" />
               </div>
             </div>
-            <div className="wallet__border">
+            <div
+              className="wallet__border"
+              aria-hidden="true"
+              onClick={() => {
+                setIsWalletConnected(true);
+                close();
+              }}
+            >
               <div className="wallet__item">
                 <img src={walletConnectLogo} alt="Wallet Connect" />
               </div>

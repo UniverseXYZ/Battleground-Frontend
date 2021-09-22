@@ -1,5 +1,5 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .popup-overlay {
   background: rgba(0, 0, 0, 0.6);
@@ -28,25 +28,9 @@
     position: absolute;
     top: -6px;
     right: -8px;
-    height: 50px;
-    width: 50px;
-    border-radius: 5px 10px;
-    background: linear-gradient(180deg, rgba(188, 235, 0, 0.2) 0%, rgba(0, 234, 234, 0.2) 100%);
-    box-shadow: 0px 10px 40px rgba(8, 99, 179, 0.4);
-    clip-path: polygon(0px 0px, 42px 0px, 50px 8px, 50px 50px, 8px 50px, 0px 42px);
-    padding: 1px;
     z-index: 9;
-
-    .close__button__color {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(180deg, #bceb00 0%, #00eaea 100%),
-        linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
-      clip-path: polygon(0px 0px, 38px 0px, 48px 10px, 48px 48px, 10px 48px, 0px 38px);
-      border-radius: 5px 13px;
+    button.primary {
+      padding: 15px;
     }
   }
   .select__battle__wallet__popup__border {
@@ -121,7 +105,7 @@
             align-items: center;
 
             &:after {
-              content: '';
+              content: "";
               position: absolute;
               top: -3px;
               left: 6px;
@@ -131,7 +115,7 @@
               background-color: rgba(255, 255, 255, 0.1);
             }
             &:before {
-              content: '';
+              content: "";
               position: absolute;
               bottom: -3px;
               right: 6px;
