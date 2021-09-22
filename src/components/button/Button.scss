@@ -1,72 +1,71 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
-button {
+.button--wrapper {
   position: relative;
-  font-family: $spaceGroteskFont;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 11px;
-  &.primary {
-    border-radius: 3px 15px;
-    background: linear-gradient(180deg, #bceb00 0%, #00eaea 100%), linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
-    color: $black;
-    font-size: 18px;
-    padding: 11px;
-    &:hover {
-      background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-        linear-gradient(180deg, #bceb00 0%, #00eaea 100%), linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
+  button {
+    position: relative;
+    font-family: $spaceGroteskFont;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 3px 14px;
+    clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 12px 100%, 0% calc(100% - 12px));
+    &.primary {
+      background: linear-gradient(180deg, #bceb00 0%, #00eaea 100%),
+        linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
+      color: $black;
+      font-size: 18px;
+      &:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+          linear-gradient(180deg, #bceb00 0%, #00eaea 100%), linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
+      }
     }
-  }
-  &.secondary {
-    background-image: linear-gradient(170deg, #bceb00 15.57%, #00eaea 84.88%);
-    background-origin: border-box;
-    box-shadow: 2px 1000px 1px #13254d inset;
-    border: solid transparent;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 0;
-    border-right-width: 0;
-    color: $white;
-    font-size: 14px;
-    padding: 11px 5px;
-    min-height: 47px;
-  }
-  &.hide--text--on--mobile {
-    span {
+    &.secondary {
+      background: #13254d;
+      color: $white;
+      font-size: 14px;
+    }
+    &.hide--text--on--mobile {
       @include sm {
-        display: none;
+        padding: 10px 12px;
+      }
+      span {
+        @include sm {
+          display: none;
+        }
+      }
+      img.icon {
+        @include sm {
+          margin-right: 0px !important;
+        }
       }
     }
     img.icon {
-      @include sm {
-        margin-right: 0px!important;
+      &.show--on--mobile--only {
+        display: none;
+        @include sm {
+          display: block;
+        }
       }
+      margin-right: 11px;
     }
   }
-  img.icon {
-    &.show--on--mobile--only {
-      display: none;
-      @include sm {
-        display: block;
-      }
+  .primary-box-shadow {
+    position: absolute;
+    left: -1.5px;
+    top: -1.5px;
+    min-height: calc(100% + 3px);
+    min-width: calc(100% + 3px);
+    clip-path: polygon(0% 0%, calc(100% - 10px) 0%, 100% 10px, 100% 100%, 10px 100%, 0% calc(100% - 10px));
+    border-radius: 3px 13px;
+    background: linear-gradient(180deg, #bceb00 0%, #00eaea 100%), linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
+    &.opacity {
+      opacity: 0.2;
     }
-    margin-right: 11px;
-  }
-  .left--shape {
-    position: absolute;
-    left: -12px;
-    top: -1px;
-    min-height: 47px;
-  }
-  .right--shape {
-    position: absolute;
-    right: -12px;
-    top: -1px;
-    min-height: 47px;
   }
 }

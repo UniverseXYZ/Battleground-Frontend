@@ -1,31 +1,9 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .input--wrapper {
   position: relative;
-  overflow: hidden;
-  border-top-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  &:after {
-    content: "";
-    position:absolute;
-    left: -8px;
-    bottom: -8px;
-    width:15px;
-    height:15px;
-    transform:rotate(45deg);
-    background: inherit;
-  }
-  &:before {
-    content: "";
-    position:absolute;
-    right: -8px;
-    top: -8px;
-    width:15px;
-    height:15px;
-    transform:rotate(45deg);
-    background: inherit;
-  }
+  clip-path: polygon(0% 0%, calc(100% - 10px) 0%, 100% 10px, 100% 100%, 10px 100%, 0% calc(100% - 10px));
   input {
     width: 100%;
     padding: 14px;
@@ -35,6 +13,8 @@
     font-size: 14px;
     line-height: 22px;
     color: $black;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     &::placeholder {
       color: rgba(32, 38, 59, 0.4);
     }

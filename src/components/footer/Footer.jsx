@@ -21,9 +21,11 @@ const Footer = () => (
         </div>
         <div className="right-section">
           <h1>Subscribe to our mailing list</h1>
-          <div>
-            <Input placeholder="Enter your email" cornerColor="#0a132d" />
-            <Button variant="primary" text="Subscribe" />
+          <div className="subscribe-form">
+            <Input placeholder="Enter your email" />
+            <div className="subscribe-btn">
+              <Button variant="primary" text="Subscribe" />
+            </div>
           </div>
           <p>
             I agree to receive emails, including company and industry updates and promotional
