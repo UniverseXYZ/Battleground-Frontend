@@ -66,14 +66,14 @@
           line-height: 22px;
           color: $white;
         }
-        div {
+        .subscribe-form {
           position: relative;
           margin-top: 20px;
           margin-bottom: 14px;
-          button {
+          .subscribe-btn {
             position: absolute;
-            top: 3px;
-            right: 3px;
+            top: 1.5px;
+            right: 1.5px;
           }
         }
       }
