@@ -3,6 +3,7 @@ import HeroSection from '../../components/landingPage/heroSection/HeroSection';
 import BattlePolymorph from '../../components/landingPage/battlePolimorph/BattlePolymorph';
 import HowToPlay from '../howToPlay/HowToPlay';
 import WagerETH from '../../components/landingPage/wagerETH/WagerETH';
+import Battlegrounds from '../../components/landingPage/BattlegroundsSection/Battlegrounds';
 
 const LandingPage = () => (
   <div>
@@ -10,6 +11,7 @@ const LandingPage = () => (
     <BattlePolymorph />
     <WagerETH />
     <HowToPlay />
+    <Battlegrounds />
   </div>
 );
 

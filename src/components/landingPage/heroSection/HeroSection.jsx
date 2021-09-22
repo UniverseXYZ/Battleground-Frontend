@@ -1,6 +1,7 @@
 import React from 'react';
 import './HeroSection.scss';
 import Button from '../../button/Button';
+import icon2 from '../../../assets/images/icons/icon.svg';
 
 const HeroSection = () => (
   <div className="hero-section">
@@ -10,6 +11,9 @@ const HeroSection = () => (
       <div className="battle-button-section">
         <Button variant="primary" text="Battle now" />
       </div>
+    </div>
+    <div className="audio-icon">
+      <img src={icon2} alt="icon" />
     </div>
   </div>
 );
