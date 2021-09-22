@@ -1,3 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Sharp Grotesk Medium";
+  src: url("../fonts/SharpGrotesk/SharpGroteskMedium.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/SharpGrotesk/SharpGroteskMedium.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/SharpGrotesk/SharpGroteskMedium.woff") format("woff"); /* Pretty Modern Browsers */
+}
+@font-face {
+  font-family: "Sharp Grotesk SemiBold";
+  src: url("../fonts/SharpGrotesk/SharpGroteskSmBold.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/SharpGrotesk/SharpGroteskSmBold.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/SharpGrotesk/SharpGroteskSmBold.woff") format("woff"); /* Pretty Modern Browsers */
+}
+
+@font-face {
+  font-family: "Sharp Grotesk Bold";
+  src: url("../fonts/SharpGrotesk/SharpGroteskBold.woff2") format("woff2"); /* Super Modern Browsers */
+}
