@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import './Header.scss';
+import Popup from 'reactjs-popup';
 import AppContext from '../../ContextAPI';
 import GoBack from '../goBack/GoBack.jsx';
 import Button from '../button/Button.jsx';
 import appLogo from '../../assets/images/app-logo.png';
 import connectWalletIcon from '../../assets/images/icons/plus.svg';
+import SelectBattleWalletPopup from '../popups/SelectBattleWalletPopup';
 import myAccountIcon from '../../assets/images/icons/my-account-icon.svg';
 
 const Header = () => {
@@ -28,14 +30,19 @@ const Header = () => {
           </div>
         ) : (
           <div>
-            <Button
-              variant="secondary"
-              text="Connect wallet"
-              icon={connectWalletIcon}
-              hideTextOnMobile
-              showIconOnMobileOnly
-              onClick={() => setIsWalletConnected(true)}
-            />
+            <Popup
+              trigger={
+                <Button
+                  variant="secondary"
+                  text="Connect wallet"
+                  icon={connectWalletIcon}
+                  hideTextOnMobile
+                  showIconOnMobileOnly
+                />
+              }
+            >
+              {(close) => <SelectBattleWalletPopup close={close} />}
+            </Popup>
           </div>
         )}
       </div>
