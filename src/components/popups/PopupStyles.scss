@@ -24,6 +24,31 @@
     top: calc(100% - 86px);
     left: calc(100% - 86px);
   }
+  .close__button__div {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px 10px;
+    background: linear-gradient(180deg, rgba(188, 235, 0, 0.2) 0%, rgba(0, 234, 234, 0.2) 100%);
+    box-shadow: 0px 10px 40px rgba(8, 99, 179, 0.4);
+    clip-path: polygon(0px 0px, 42px 0px, 50px 8px, 50px 50px, 8px 50px, 0px 42px);
+    padding: 1px;
+    z-index: 9;
+
+    .close__button__color {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(180deg, #bceb00 0%, #00eaea 100%),
+        linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
+      clip-path: polygon(0px 0px, 38px 0px, 48px 10px, 48px 48px, 10px 48px, 0px 38px);
+      border-radius: 5px 13px;
+    }
+  }
   .select__battle__wallet__popup__border {
     clip-path: polygon(0% 20px, 20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%);
     background: #286193;
@@ -64,6 +89,10 @@
         color: rgba(255, 255, 255, 0.6);
         margin-top: 10px;
         margin-bottom: 40px;
+        @include sm {
+          max-width: 274px;
+          margin: 10px auto 30px;
+        }
       }
 
       .wallets {
@@ -73,7 +102,7 @@
 
         .wallet__border {
           cursor: pointer;
-          padding: 1px;
+          padding: 2px;
           .wallet__item {
             position: relative;
             height: 96px;
@@ -105,21 +134,27 @@
               content: '';
               position: absolute;
               bottom: -3px;
-              right: 7px;
+              right: 6px;
               width: 1px;
-              height: 20px;
+              height: 19px;
               transform: rotate(44deg);
               background-color: rgba(255, 255, 255, 0.1);
+            }
+            @include sm {
+              height: 75px;
             }
           }
           &:hover {
             background-image: linear-gradient(135deg, #bceb00, #00eaea);
-            clip-path: polygon(0% 15px, 15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%);
+            clip-path: polygon(0% 16px, 16px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%);
             .wallet__item {
               background: #21355a;
               border: none;
             }
           }
+        }
+        @include sm {
+          gap: 15px;
         }
       }
       .wallet__desc {
@@ -132,7 +167,16 @@
         color: rgba(255, 255, 255, 0.6);
         max-width: 355px;
         margin: 40px auto 0;
+        @include sm {
+          margin: 30px auto 0;
+        }
+      }
+      @include sm {
+        padding: 44px 20px 50px;
       }
     }
+  }
+  @include sm {
+    width: 90%;
   }
 }
