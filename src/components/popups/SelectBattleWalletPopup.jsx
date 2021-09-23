@@ -34,6 +34,7 @@ const SelectBattleWalletPopup = ({ close }) => {
               onClick={() => {
                 setIsWalletConnected(true);
                 close();
+                document.querySelector('body').style.overflow = 'auto';
               }}
             >
               <div className="wallet__item">
@@ -46,6 +47,7 @@ const SelectBattleWalletPopup = ({ close }) => {
               onClick={() => {
                 setIsWalletConnected(true);
                 close();
+                document.querySelector('body').style.overflow = 'auto';
               }}
             >
               <div className="wallet__item">
@@ -58,6 +60,7 @@ const SelectBattleWalletPopup = ({ close }) => {
               onClick={() => {
                 setIsWalletConnected(true);
                 close();
+                document.querySelector('body').style.overflow = 'auto';
               }}
             >
               <div className="wallet__item">
@@ -70,6 +73,7 @@ const SelectBattleWalletPopup = ({ close }) => {
               onClick={() => {
                 setIsWalletConnected(true);
                 close();
+                document.querySelector('body').style.overflow = 'auto';
               }}
             >
               <div className="wallet__item">
@@ -82,6 +86,7 @@ const SelectBattleWalletPopup = ({ close }) => {
               onClick={() => {
                 setIsWalletConnected(true);
                 close();
+                document.querySelector('body').style.overflow = 'auto';
               }}
             >
               <div className="wallet__item">
@@ -94,6 +99,7 @@ const SelectBattleWalletPopup = ({ close }) => {
               onClick={() => {
                 setIsWalletConnected(true);
                 close();
+                document.querySelector('body').style.overflow = 'auto';
               }}
             >
               <div className="wallet__item">
