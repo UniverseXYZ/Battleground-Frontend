@@ -4,6 +4,7 @@ import BattlePolymorph from '../../components/landingPage/battlePolimorph/Battle
 import HowToPlay from '../howToPlay/HowToPlay';
 import WagerETH from '../../components/landingPage/wagerETH/WagerETH';
 import Battlegrounds from '../../components/landingPage/BattlegroundsSection/Battlegrounds';
+import Loading from '../../components/loading/Loading.jsx';
 
 const LandingPage = () => (
   <div>
@@ -12,6 +13,7 @@ const LandingPage = () => (
     <WagerETH />
     <HowToPlay />
     <Battlegrounds />
+    <Loading />
   </div>
 );
 
