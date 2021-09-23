@@ -30,10 +30,11 @@
       background: #13254d;
       color: $white;
       font-size: 14px;
+      min-height: 47px;
     }
     &.hide--text--on--mobile {
       @include sm {
-        padding: 10px 12px;
+        padding: 10px 16px;
       }
       span {
         @include sm {
