@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import './SliderComponent.scss';
 import uuid from 'react-uuid';
-import eth from '../../../assets/images/landingPage/eth-white-icon.svg';
+import eth from '../../../assets/images/icons/eth-white-icon.svg';
 import cutBorder from '../../../assets/images/landingPage/cut-border-blue.png';
 import { BattlegroundsDummyData } from '../../../utils/fixtures/BattlegroundsDummyData';
 
