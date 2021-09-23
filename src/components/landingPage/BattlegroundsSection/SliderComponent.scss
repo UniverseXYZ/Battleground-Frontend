@@ -5,63 +5,56 @@
   padding: 10px;
   height: auto;
   margin-bottom: 66px;
-  .slider-item {
+  .slider-borders {
     position: relative;
-    border: 1px solid #286193;
-    height: 304px;
-    .wallet-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 192px;
-      margin: auto;
-      background-image: url("../../../assets/images/landingPage/battlegrounds-bg.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      > h3 {
-        font-family: $orbitronFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 120%;
-        text-align: right;
-        color: $white;
-        margin: 0;
-        padding: 15px 5px;
 
-        @include md {
-          font-size: 15px;
-          padding: 11px 5px;
-        }
-        @include sm {
-          font-size: 9px;
-          padding: 7px 5px;
-        }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      right: 10px;
+      width: 1px;
+      height: 29px;
+      transform: rotate(44deg);
+      background-color: #286193;
+      z-index: 111;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 10px;
+      width: 1px;
+      height: 29px;
+      transform: rotate(44deg);
+      background-color: #286193;
+      z-index: 111;
+    }
+    @include md {
+      &:before {
+        bottom: -3px;
+        right: 7px;
+        height: 22px;
       }
-      @include md {
-        background-size: contain;
-        width: 145px;
-      }
-      @include sm {
-        background-image: url("../../../assets/images/landingPage/battleground-bg-mobile.png");
-        background-size: contain;
-        width: 89px;
-      }
-      img {
-        @include sm {
-          width: 10px;
-          height: 20px;
-        }
-        @include sm {
-          width: 5.78px;
-          height: 10px;
-        }
+      &:after {
+        top: -3px;
+        left: 7px;
+        height: 22px;
       }
     }
+    @include sm {
+      &:before {
+        bottom: -1px;
+        right: 4px;
+        height: 13px;
+      }
+      &:after {
+        top: -1px;
+        left: 5px;
+        height: 13px;
+      }
+    }
+
     .bottom-right-border-effect {
       position: absolute;
       width: 92px;
@@ -72,14 +65,14 @@
       @include md {
         width: 69px;
         height: 69px;
-        right: -5.5px;
-        bottom: -5.5px;
+        right: -4px;
+        bottom: -4px;
       }
       @include sm {
         width: 43px;
         height: 43px;
-        right: -3.5px;
-        bottom: -3.5px;
+        right: -2px;
+        bottom: -2px;
       }
     }
     .left-top-border-effect {
@@ -93,106 +86,171 @@
       @include md {
         width: 69px;
         height: 69px;
-        top: -5.5px;
-        left: -5.5px;
+        top: -4px;
+        left: -4px;
       }
       @include sm {
         width: 43px;
         height: 43px;
-        top: -3.5px;
-        left: -3.5px;
+        top: -2px;
+        left: -2px;
       }
     }
-    > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .slider-item {
+      position: relative;
+      border: 1px solid #286193;
+      height: 304px;
+      clip-path: polygon(
+        0% 20px,
+        20px 0%,
+        calc(100% + 1px) 0%,
+        calc(100% + 1px) calc(100% - 20px),
+        calc(100% - 20px) calc(100% + 1px),
+        0% calc(100% + 1px)
+      );
+      .wallet-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 192px;
+        margin: auto;
+        background-image: url("../../../assets/images/landingPage/battlegrounds-bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > h3 {
+          font-family: $orbitronFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 120%;
+          text-align: right;
+          color: $white;
+          margin: 0;
+          padding: 15px 5px;
 
-    .battleground-name {
-      margin: 0;
-      position: absolute;
-      bottom: 26px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: $orbitronFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 120%;
-      color: $white;
+          @include md {
+            font-size: 15px;
+            padding: 11px 5px;
+          }
+          @include sm {
+            font-size: 9px;
+            padding: 7px 5px;
+          }
+        }
+        @include md {
+          background-size: contain;
+          width: 145px;
+        }
+        @include sm {
+          background-image: url("../../../assets/images/landingPage/battleground-bg-mobile.png");
+          background-size: contain;
+          width: 89px;
+        }
+        img {
+          @include sm {
+            width: 10px;
+            height: 20px;
+          }
+          @include sm {
+            width: 5.78px;
+            height: 10px;
+          }
+        }
+      }
+      .bottom-right-border-effect {
+        position: absolute;
+        width: 92px;
+        height: 92px;
+        bottom: -6px;
+        right: -6px;
+        z-index: 10;
+        @include md {
+          width: 69px;
+          height: 69px;
+          right: -5.5px;
+          bottom: -5.5px;
+        }
+        @include sm {
+          width: 43px;
+          height: 43px;
+          right: -3.5px;
+          bottom: -3.5px;
+        }
+      }
+      .left-top-border-effect {
+        position: absolute;
+        width: 92px;
+        height: 92px;
+        top: -6px;
+        left: -6px;
+        transform: rotate(180deg);
+        z-index: 10;
+        @include md {
+          width: 69px;
+          height: 69px;
+          top: -5.5px;
+          left: -5.5px;
+        }
+        @include sm {
+          width: 43px;
+          height: 43px;
+          top: -3.5px;
+          left: -3.5px;
+        }
+      }
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .battleground-name {
+        margin: 0;
+        position: absolute;
+        bottom: 26px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: $orbitronFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 120%;
+        color: $white;
+        @include md {
+          font-size: 13px;
+          bottom: 19px;
+        }
+        @include sm {
+          font-size: 8px;
+          bottom: 12px;
+        }
+      }
+
       @include md {
-        font-size: 13px;
-        bottom: 19px;
+        height: 229px;
+        clip-path: polygon(
+          0% 15px,
+          15px 0%,
+          calc(100% + 1px) 0%,
+          calc(100% + 1px) calc(100% - 15px),
+          calc(100% - 15px) calc(100% + 1px),
+          0% calc(100% + 1px)
+        );
       }
       @include sm {
-        font-size: 8px;
-        bottom: 12px;
-      }
-    }
-
-    @include md {
-      height: 229px;
-    }
-    @include sm {
-      height: 142px;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: -12px;
-      left: -9px;
-      width: 20px;
-      height: 30px;
-      transform: rotate(43deg);
-      background-color: #172242;
-      border-right: 2px solid #286193;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: -12px;
-      right: -9px;
-      width: 20px;
-      height: 30px;
-      transform: rotate(43deg);
-      background-color: #172242;
-      border-left: 2px solid #286193;
-    }
-    @include md {
-      &:after {
-        top: -11px;
-        left: -11px;
-        width: 20px;
-        height: 20px;
-        transform: rotate(45deg);
-        border-right: 1px solid #286193;
-      }
-      &:before {
-        right: -11px;
-        bottom: -11px;
-        width: 20px;
-        height: 20px;
-        transform: rotate(45deg);
-        border-left: 1px solid #286193;
-      }
-    }
-    @include sm {
-      &:after {
-        top: -8px;
-        left: -11px;
-        width: 17px;
-        height: 13px;
-        transform: rotate(44deg);
-        border-right: 1px solid #286193;
-      }
-      &:before {
-        bottom: -8px;
-        right: -11px;
-        width: 17px;
-        height: 13px;
-        transform: rotate(44deg);
-        border-left: 1px solid #286193;
+        height: 142px;
+        clip-path: polygon(
+          0% 10px,
+          10px 0%,
+          calc(100% + 1px) 0%,
+          calc(100% + 1px) calc(100% - 10px),
+          calc(100% - 10px) calc(100% + 1px),
+          0% calc(100% + 1px)
+        );
       }
     }
   }
