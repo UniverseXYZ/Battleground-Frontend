@@ -1,6 +1,10 @@
 @import "../../assets/scss/variables";
 @import "../../assets/scss/mixins";
 
+.popup-arrow {
+  display: none;
+}
+
 .popup-overlay {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);

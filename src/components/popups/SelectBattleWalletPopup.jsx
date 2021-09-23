@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import metamaskLogo from '../../assets/images/metamask-logo.png';
-import ledgerLogo from '../../assets/images/ledger-logo.png';
-import portisLogo from '../../assets/images/portis-logo.png';
-import trezorLogo from '../../assets/images/trezor-logo.png';
-import coinbaseLogo from '../../assets/images/coinbase-logo.png';
-import walletConnectLogo from '../../assets/images/walletconnect-logo.png';
+import metamaskLogo from '../../assets/images/popup/metamask-logo.png';
+import ledgerLogo from '../../assets/images/popup/ledger-logo.png';
+import portisLogo from '../../assets/images/popup/portis-logo.png';
+import trezorLogo from '../../assets/images/popup/trezor-logo.png';
+import coinbaseLogo from '../../assets/images/popup/coinbase-logo.png';
+import walletConnectLogo from '../../assets/images/popup/walletconnect-logo.png';
 import subtractLeft from '../../assets/images/icons/subtract-left.svg';
 import subtractRight from '../../assets/images/icons/subtract-right.svg';
 import closeIcon from '../../assets/images/icons/cross.svg';
