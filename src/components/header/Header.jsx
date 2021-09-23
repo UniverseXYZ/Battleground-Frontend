@@ -115,6 +115,8 @@ const Header = () => {
                   showIconOnMobileOnly
                 />
               }
+              modal
+              lockScroll
             >
               {(close) => <SelectBattleWalletPopup close={close} />}
             </Popup>

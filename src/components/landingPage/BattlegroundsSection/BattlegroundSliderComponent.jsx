@@ -40,10 +40,10 @@ const BattlegroundSliderComponent = () => {
     <div style={{ pointerEvents: 'none' }}>
       <Slider {...settings}>
         {BattlegroundsDummyData.map((item) => (
-          <div className="slider-borders">
+          <div className="slider-borders" key={uuid()}>
             <img src={cutBorder} alt="border-effect" className="left-top-border-effect" />
             <img src={cutBorder} alt="border-effect" className="bottom-right-border-effect" />
-            <div style={{ width: sliderWidth }} className="slider-item" key={uuid()}>
+            <div style={{ width: sliderWidth }} className="slider-item">
               <div className="wallet-bg">
                 <img src={eth} alt="eth" />
                 <h3>{item.price}</h3>

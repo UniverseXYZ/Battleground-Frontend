@@ -7,7 +7,7 @@ const Loading = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setPercentage(percentage + 10);
+      setPercentage(percentage + 20);
     }, 1000);
     if (percentage >= 100) {
       clearTimeout(timer);
