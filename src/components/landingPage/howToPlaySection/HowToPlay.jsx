@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import battlegroundImg from '../../assets/images/loading/battleground.png';
-import fighterImg from '../../assets/images/loading/fighter.png';
-import battleImg from '../../assets/images/loading/battle.png';
-import rewardImg from '../../assets/images/loading/claim-rewards.png';
+import battlegroundImg from '../../../assets/images/loading/battleground.png';
+import fighterImg from '../../../assets/images/loading/fighter.png';
+import battleImg from '../../../assets/images/loading/battle.png';
+import rewardImg from '../../../assets/images/loading/claim-rewards.png';
 import './HowToPlay.scss';
 
 const HowToPlay = () => {

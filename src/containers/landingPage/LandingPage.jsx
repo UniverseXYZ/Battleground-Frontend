@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import HeroSection from '../../components/landingPage/heroSection/HeroSection';
-import BattlePolymorph from '../../components/landingPage/battlePolimorph/BattlePolymorph';
-import HowToPlay from '../howToPlay/HowToPlay';
-import WagerETH from '../../components/landingPage/wagerETH/WagerETH';
+import BattlePolymorph from '../../components/landingPage/battlePolymorphSection/BattlePolymorph';
+import HowToPlay from '../../components/landingPage/howToPlaySection/HowToPlay';
+import WagerETH from '../../components/landingPage/wagerETHSection/WagerETH';
 import Battlegrounds from '../../components/landingPage/BattlegroundsSection/Battlegrounds';
 import Loading from '../../components/loading/Loading.jsx';
 
