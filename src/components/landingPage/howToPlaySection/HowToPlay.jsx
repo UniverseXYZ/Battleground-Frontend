@@ -6,7 +6,7 @@ import rewardImg from '../../../assets/images/loading/claim-rewards.png';
 import './HowToPlay.scss';
 
 const HowToPlay = () => {
-  const [firstContentOpened, setFirstContentOpened] = useState(false);
+  const [firstContentOpened, setFirstContentOpened] = useState(true);
   const [secondContentOpened, setSecondContentOpened] = useState(false);
   const [thirdContentOpened, setThirdContentOPened] = useState(false);
   const [forthContentOpened, setForthContentOpened] = useState(false);
