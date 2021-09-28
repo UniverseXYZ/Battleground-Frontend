@@ -50,6 +50,7 @@ const BattlegroundSliderComponent = () => {
               </div>
               <img src={item.background} alt="Slider 1" />
               <h1 className="battleground-name">{item.name}</h1>
+              <div className="slider-overlay" />
             </div>
           </div>
         ))}

@@ -1,66 +1,67 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 .hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 730px;
-    padding: 0 60px;
-    background-image: url("../../../assets/images/landingPage/heroBackground.png") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    .audio-icon{
-        position: absolute;
-        left: 25px;
-        bottom: 35px;
-        @include md {
-            display: none;
-        }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 730px;
+  padding: 0 60px;
+  background-image: url('../../../assets/images/landingPage/heroBackground.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  .audio-icon {
+    position: fixed;
+    left: 25px;
+    bottom: 215px;
+    z-index: 9;
+    @include md {
+      display: none;
     }
-    .hero-section-container{
-        h1{
-            font-family: $orbitronFont;
-            font-size: 72px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 79px;
-            color: $white;
-            max-width: 730px;
-            margin: 0 auto;
-            text-align: center;
-            @include md {
-                font-size: 58px;
-                line-height: 63.8px;
-                max-width: 605px;
-            }
-            @include sm {
-                font-size: 38px;
-                line-height: 41.8px;
-                max-width: 345px;
-            }
-        }
-        p{
-            font-family: $spaceGroteskFont;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 27px;
-            color: #FFFFFFCC;
-            margin: 20px auto 40px auto;
-            max-width: 465px;
-            text-align: center;
-            @include sm {
-                max-width: 321px;
-            }
-        }
-        .battle-button-section{
-            display: flex;
-            justify-content: center;
-        }
+  }
+  .hero-section-container {
+    h1 {
+      font-family: $orbitronFont;
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 79px;
+      color: $white;
+      max-width: 730px;
+      margin: 0 auto;
+      text-align: center;
+      @include md {
+        font-size: 58px;
+        line-height: 63.8px;
+        max-width: 605px;
+      }
+      @include sm {
+        font-size: 38px;
+        line-height: 41.8px;
+        max-width: 345px;
+      }
     }
-    @include sm {
-        padding: 0 20px;
+    p {
+      font-family: $spaceGroteskFont;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 27px;
+      color: #ffffffcc;
+      margin: 20px auto 40px auto;
+      max-width: 465px;
+      text-align: center;
+      @include sm {
+        max-width: 321px;
+      }
     }
+    .battle-button-section {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @include sm {
+    padding: 0 20px;
+  }
 }

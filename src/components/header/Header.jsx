@@ -2,12 +2,13 @@ import React, { useContext, useState, useRef } from 'react';
 import './Header.scss';
 import Popup from 'reactjs-popup';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { useHistory } from 'react-router';
 import AppContext from '../../ContextAPI';
 import GoBack from '../goBack/GoBack.jsx';
 import Button from '../button/Button.jsx';
 import SelectBattleWalletPopup from '../popups/SelectBattleWalletPopup.jsx';
 import useOutsideClick from '../../utils/hooks/useOutsideClick.js';
-import appLogo from '../../assets/images/landingPage/battleuniverse.png';
+import appLogo from '../../assets/images/landingPage/battle-universe.svg';
 import connectWalletIcon from '../../assets/images/icons/plus.svg';
 import myAccountIcon from '../../assets/images/icons/my-account-icon.svg';
 import eth from '../../assets/images/icons/eth-white-icon.svg';
@@ -20,6 +21,7 @@ const Header = () => {
   const { isWalletConnected, setIsWalletConnected } = useContext(AppContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const ref = useRef();
+  const history = useHistory();
   const PLACEHOLDER_ETHEREUM_ADDRESS = '0x5493a5a6f...ef8b';
   const [copied, setCopied] = useState(false);
 
@@ -30,8 +32,13 @@ const Header = () => {
   return (
     <header>
       <div className="back--btn">{/* <GoBack text="Home" /> */}</div>
-      <div className="logo">
-        <img src={appLogo} alt="App logo" />
+      <div className="logo-div">
+        <div className="logo" onClick={() => history.push('/')} aria-hidden="true">
+          <div className="background">{/* <img src={appLogo} alt="App logo" /> */}</div>
+        </div>
+        <div className="left" />
+        <div className="right" />
+        <div className="down" />
       </div>
       <div className="connect--wallet--btn">
         {isWalletConnected ? (
