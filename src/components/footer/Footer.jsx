@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.scss';
-import battleuniverse from '../../assets/images/landingPage/battleuniverse.png';
+import battleuniverse from '../../assets/images/landingPage/battle-universe.svg';
 import Button from '../button/Button';
 import inIcon from '../../assets/images/icons/in.svg';
 import twitter from '../../assets/images/icons/twitter.svg';
