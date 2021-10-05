@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import metamaskLogo from '../../assets/images/popup/metamask-logo.png';
-import ledgerLogo from '../../assets/images/popup/ledger-logo.png';
-import portisLogo from '../../assets/images/popup/portis-logo.png';
-import trezorLogo from '../../assets/images/popup/trezor-logo.png';
-import coinbaseLogo from '../../assets/images/popup/coinbase-logo.png';
-import walletConnectLogo from '../../assets/images/popup/walletconnect-logo.png';
-import subtractLeft from '../../assets/images/icons/subtract-left.svg';
-import subtractRight from '../../assets/images/icons/subtract-right.svg';
-import closeIcon from '../../assets/images/icons/cross.svg';
-import './PopupStyles.scss';
-import Button from '../button/Button';
-import AppContext from '../../ContextAPI';
+import metamaskLogo from '../../../assets/images/popup/metamask-logo.png';
+import ledgerLogo from '../../../assets/images/popup/ledger-logo.png';
+import portisLogo from '../../../assets/images/popup/portis-logo.png';
+import trezorLogo from '../../../assets/images/popup/trezor-logo.png';
+import coinbaseLogo from '../../../assets/images/popup/coinbase-logo.png';
+import walletConnectLogo from '../../../assets/images/popup/walletconnect-logo.png';
+import subtractLeft from '../../../assets/images/icons/subtract-left.svg';
+import subtractRight from '../../../assets/images/icons/subtract-right.svg';
+import closeIcon from '../../../assets/images/icons/cross.svg';
+import './SelectWalletPopup.scss';
+import Button from '../../button/Button';
+import AppContext from '../../../ContextAPI';
 
-const SelectBattleWalletPopup = ({ close }) => {
+const SelectWalletPopup = ({ close }) => {
   const { setIsWalletConnected } = useContext(AppContext);
 
   return (
@@ -116,7 +116,7 @@ const SelectBattleWalletPopup = ({ close }) => {
   );
 };
 
-SelectBattleWalletPopup.propTypes = {
+SelectWalletPopup.propTypes = {
   close: PropTypes.func.isRequired,
 };
-export default SelectBattleWalletPopup;
+export default SelectWalletPopup;

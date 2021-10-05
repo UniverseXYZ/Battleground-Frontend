@@ -10,13 +10,7 @@ import Loading from './components/loading/Loading';
 const App = () => {
   const location = useLocation();
   const [isWalletConnected, setIsWalletConnected] = useState(false);
-  const [showLoading, setShowLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowLoading(false);
-    }, 6000);
-  }, []);
+  const [showLoading, setShowLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
