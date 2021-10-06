@@ -18,7 +18,7 @@ import signOutIcon from '../../assets/images/icons/sign-out.svg';
 import copyIcon from '../../assets/images/icons/copy.svg';
 
 const Header = () => {
-  const { isWalletConnected, setIsWalletConnected } = useContext(AppContext);
+  const { isWalletConnected, setIsWalletConnected, goBack } = useContext(AppContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const ref = useRef();
   const history = useHistory();
@@ -31,10 +31,12 @@ const Header = () => {
 
   return (
     <header>
-      <div className="back--btn">{/* <GoBack text="Home" /> */}</div>
+      <div className="back--btn">
+        {goBack.text ? <GoBack text={goBack.text} path={goBack.path} /> : <></>}
+      </div>
       <div className="logo-div">
         <div className="logo" onClick={() => history.push('/')} aria-hidden="true">
-          <div className="background">{/* <img src={appLogo} alt="App logo" /> */}</div>
+          <div className="background" />
         </div>
         <div className="left" />
         <div className="right" />

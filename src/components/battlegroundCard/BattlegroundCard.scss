@@ -1,0 +1,244 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.battleground--card--section {
+  .battleground--card {
+    position: relative;
+
+    .bottom-right-border-effect {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      bottom: -6px;
+      right: -6px;
+      z-index: 10;
+    }
+    .left-top-border-effect {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      top: -6px;
+      left: -6px;
+      transform: rotate(180deg);
+      z-index: 10;
+    }
+
+    .bottom-right-border-hover-effect {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      bottom: -6px;
+      right: -6px;
+      transform: rotate(180deg);
+      visibility: hidden;
+    }
+    .top-left-border-hover-effect {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      top: -6px;
+      left: -6px;
+      visibility: hidden;
+    }
+
+    .battleground--card--body {
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(
+        0% 20px,
+        20px 0%,
+        calc(100% + 1px) 0%,
+        calc(100% + 1px) calc(100% - 20px),
+        calc(100% - 20px) calc(100% + 1px),
+        0% calc(100% + 1px)
+      );
+
+      .online--users {
+        position: absolute;
+        z-index: 1;
+        left: 30px;
+        top: 22px;
+        padding: 9px 11px;
+        background: linear-gradient(180deg, rgba(78, 217, 142, 0.2) 0%, rgba(69, 218, 129, 0.2) 100%);
+        border-radius: 2px;
+        display: flex;
+
+        > span {
+          font-family: $spaceGroteskFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 18px;
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          color: #11ff9b;
+          margin-left: 7px;
+        }
+      }
+      .wallet-bg {
+        position: absolute;
+        top: 0;
+        right: -42px;
+        width: 192px;
+        margin: auto;
+        background-image: url("../../assets/images/landingPage/battlegrounds-bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        > h3 {
+          font-family: $orbitronFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 120%;
+          text-align: right;
+          color: $white;
+          margin: 0;
+          padding: 15px 5px;
+
+          @include md {
+            font-size: 16px;
+          }
+        }
+      }
+      .bottom-right-border-effect {
+        position: absolute;
+        width: 92px;
+        height: 92px;
+        bottom: -6px;
+        right: -6px;
+        z-index: 10;
+        @include md {
+          width: 69px;
+          height: 69px;
+          right: -5.5px;
+          bottom: -5.5px;
+        }
+        @include sm {
+          width: 43px;
+          height: 43px;
+          right: -3.5px;
+          bottom: -3.5px;
+        }
+      }
+      .left-top-border-effect {
+        position: absolute;
+        width: 92px;
+        height: 92px;
+        top: -6px;
+        left: -6px;
+        transform: rotate(180deg);
+        z-index: 10;
+        @include md {
+          width: 69px;
+          height: 69px;
+          top: -5.5px;
+          left: -5.5px;
+        }
+        @include sm {
+          width: 43px;
+          height: 43px;
+          top: -3.5px;
+          left: -3.5px;
+        }
+      }
+
+      .battlegrounds--image {
+        position: relative;
+        > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .battleground--name {
+          margin: 0;
+          position: absolute;
+          bottom: 21px;
+          left: 30px;
+          font-family: $orbitronFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 120%;
+          color: $white;
+          z-index: 1;
+          @include md {
+            font-size: 16px;
+            bottom: 19px;
+          }
+        }
+        .battleground--rewords {
+          position: absolute;
+          right: 30px;
+          bottom: 21px;
+          z-index: 1;
+          display: flex;
+          span {
+            font-family: $spaceGroteskFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+          }
+          > img {
+            margin: 0 4px 0 8px;
+            width: 10px;
+          }
+        }
+        .slider-overlay {
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          height: 135px;
+          background: linear-gradient(180deg, #000d31 0%, rgba(0, 13, 49, 0) 100%);
+          transform: rotate(180deg);
+          @include md {
+            height: 102px;
+          }
+          @include sm {
+            height: 63px;
+          }
+        }
+      }
+
+      .battleground--card--buttons {
+        background: linear-gradient(180deg, #000d31 0%, #000d31 100%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 18px;
+        padding: 15px 31px;
+        .button--wrapper {
+          button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            &.secondary {
+              background: linear-gradient(180deg, #000d31 0%, #000d31 100%);
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      .top-left-border-hover-effect,
+      .bottom-right-border-hover-effect {
+        visibility: visible;
+        transition: 0.5s;
+      }
+      .bottom-right-border-effect,
+      .left-top-border-effect {
+        visibility: hidden;
+      }
+    }
+  }
+}
