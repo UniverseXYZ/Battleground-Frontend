@@ -1,5 +1,5 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 header {
   position: fixed;
@@ -14,6 +14,11 @@ header {
   justify-content: space-between;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+  + div {
+    padding-top: 70px !important;
+  }
+
   .logo-div {
     position: absolute;
     left: 50%;
@@ -29,14 +34,15 @@ header {
       clip-path: polygon(0 0, 100% 0, 70% 100%, 30% 100%);
 
       .background {
-        background-image: url('../../assets/images/landingPage/battle-universe.svg');
+        cursor: pointer;
+        background-image: url("../../assets/images/landingPage/battle-universe.svg");
         background-repeat: no-repeat;
         background-position: center;
         width: 108px;
         height: 30px;
 
         &:hover {
-          background-image: url('../../assets/images/landingPage/battle-universe1.svg');
+          background-image: url("../../assets/images/landingPage/battle-universe1.svg");
           background-size: contain;
           width: 150px;
           height: 75px;

@@ -4,6 +4,10 @@
 .button--wrapper {
   position: relative;
   // box-shadow: 0px 10px 40px rgba(8, 99, 179, 0.4);
+  &.disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
   button {
     position: relative;
     font-family: $spaceGroteskFont;
@@ -16,6 +20,9 @@
     padding: 12px 24px;
     border-radius: 3px 14px;
     clip-path: polygon(0% 0%, calc(100% - 12px) 0%, 100% 12px, 100% 100%, 12px 100%, 0% calc(100% - 12px));
+    &:disabled {
+      cursor: not-allowed;
+    }
     &.primary {
       background: linear-gradient(180deg, #bceb00 0%, #00eaea 100%),
         linear-gradient(360deg, #0d5cb6 0%, #138ded 110.94%);
