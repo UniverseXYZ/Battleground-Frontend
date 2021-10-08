@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import AppContext from '../../ContextAPI';
 import GoBack from '../goBack/GoBack.jsx';
 import Button from '../button/Button.jsx';
-import SelectBattleWalletPopup from '../popups/SelectBattleWalletPopup.jsx';
+import SelectWalletPopup from '../popups/selectWalletPopup/SelectWalletPopup.jsx';
 import useOutsideClick from '../../utils/hooks/useOutsideClick.js';
 import appLogo from '../../assets/images/landingPage/battle-universe.svg';
 import connectWalletIcon from '../../assets/images/icons/plus.svg';
@@ -127,7 +127,7 @@ const Header = () => {
               modal
               lockScroll
             >
-              {(close) => <SelectBattleWalletPopup close={close} />}
+              {(close) => <SelectWalletPopup close={close} />}
             </Popup>
           </div>
         )}

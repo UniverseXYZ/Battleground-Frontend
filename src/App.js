@@ -11,14 +11,8 @@ import Battlegrounds from './containers/battlegrounds/Battlegrounds';
 const App = () => {
   const location = useLocation();
   const [isWalletConnected, setIsWalletConnected] = useState(false);
-  const [showLoading, setShowLoading] = useState(true);
+  const [showLoading, setShowLoading] = useState(false);
   const [goBack, setGoBack] = useState({ text: '', path: '' });
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowLoading(false);
-    }, 6000);
-  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
