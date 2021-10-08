@@ -5,17 +5,25 @@ import AppContext from './ContextAPI';
 import Header from './components/header/Header.jsx';
 import Footer from './components/footer/Footer.jsx';
 import LandingPage from './containers/landingPage/LandingPage.jsx';
-import Loading from './components/loading/Loading';
 import Battlegrounds from './containers/battlegrounds/Battlegrounds';
 
 const App = () => {
   const location = useLocation();
   const [isWalletConnected, setIsWalletConnected] = useState(false);
-  const [showLoading, setShowLoading] = useState(false);
-  const [goBack, setGoBack] = useState({ text: '', path: '' });
+  const [goPreviousPage, setGoPreviousPage] = useState({ text: '', path: '' });
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    switch (location.pathname) {
+      case '/':
+        setGoPreviousPage({ text: '', path: null });
+        break;
+      case '/battlegrounds':
+        setGoPreviousPage({ text: 'Home', path: '/' });
+        break;
+      default:
+        setGoPreviousPage({ text: '', path: '/' });
+    }
   }, [location]);
 
   return (
@@ -23,25 +31,19 @@ const App = () => {
       value={{
         isWalletConnected,
         setIsWalletConnected,
-        goBack,
-        setGoBack,
+        goPreviousPage,
+        setGoPreviousPage,
       }}
     >
-      {showLoading ? (
-        <Loading />
-      ) : (
-        <>
-          <Header />
-          <div>
-            <Switch>
-              <Route exact path="/" component={() => <LandingPage />} />
-              <Route exact path="/battlegrounds" component={() => <Battlegrounds />} />
-              <Route path="*" component={() => <LandingPage />} />
-            </Switch>
-          </div>
-          <Footer />
-        </>
-      )}
+      <Header />
+      <div>
+        <Switch>
+          <Route exact path="/" component={() => <LandingPage />} />
+          <Route exact path="/battlegrounds" component={() => <Battlegrounds />} />
+          <Route path="*" component={() => <LandingPage />} />
+        </Switch>
+      </div>
+      <Footer />
     </AppContext.Provider>
   );
 };

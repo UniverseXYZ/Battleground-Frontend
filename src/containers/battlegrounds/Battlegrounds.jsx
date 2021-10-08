@@ -2,12 +2,12 @@ import React from 'react';
 import BattlegroundCard from '../../components/battlegroundCard/BattlegroundCard';
 import './Battlegrounds.scss';
 import { BattlegroundsDummyData } from '../../utils/fixtures/BattlegroundsDummyData';
-import icon2 from '../../assets/images/icons/icon.svg';
+import soundIcon from '../../assets/images/icons/sound-icon.svg';
 
 const Battlegrounds = () => (
   <div className="battlegrounds--section">
     <div className="audio-icon">
-      <img src={icon2} alt="icon" />
+      <img src={soundIcon} alt="icon" />
     </div>
     <div className="container">
       <div className="battlegrounds--title">

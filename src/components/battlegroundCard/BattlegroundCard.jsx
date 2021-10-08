@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './BattlegroundCard.scss';
-import eth from '../../assets/images/icons/eth-white-icon.svg';
+import ethIcon from '../../assets/images/icons/eth-white-icon-small.svg';
 import cutBorder from '../../assets/images/landingPage/cut-border-blue.png';
 import cutBorderHover from '../../assets/images/battlegroundsPage/battleground-cut-border-hover.png';
-import players from '../../assets/images/icons/players.svg';
+import playersIcon from '../../assets/images/icons/players-icon.svg';
 import Button from '../button/Button';
 
 const BattlegroundCard = ({ battleground }) => (
@@ -24,11 +24,11 @@ const BattlegroundCard = ({ battleground }) => (
       />
       <div className="battleground--card--body">
         <div className="online--users">
-          <img src={players} alt="online-players" />
+          <img src={playersIcon} alt="online-players" />
           <span>{battleground.players}</span>
         </div>
         <div className="wallet-bg">
-          <img src={eth} alt="eth" />
+          <img src={ethIcon} alt="eth" />
           <h3>{battleground.price}</h3>
         </div>
         <div className="battlegrounds--image">
@@ -36,7 +36,7 @@ const BattlegroundCard = ({ battleground }) => (
           <h1 className="battleground--name">{battleground.name}</h1>
           <div className="battleground--rewords">
             <span>Rewards:</span>
-            <img src={eth} alt="eth" />
+            <img src={ethIcon} alt="eth" />
             <span>{battleground.rewards}</span>
           </div>
           <div className="slider-overlay" />

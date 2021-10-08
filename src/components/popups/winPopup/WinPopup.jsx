@@ -5,17 +5,17 @@ import win from '../../../assets/images/popup/win-min.png';
 import fighterAvatar1 from '../../../assets/images/popup/fighter1.png';
 import fighterAvatar2 from '../../../assets/images/popup/fighter2.png';
 import Button from '../../button/Button';
-import closeIcon from '../../../assets/images/icons/cross.svg';
-import subtractLeft from '../../../assets/images/icons/subtract-left.svg';
-import subtractRight from '../../../assets/images/icons/subtract-right.svg';
+import closeIcon from '../../../assets/images/icons/close-icon.svg';
+import subtractLeftIcon from '../../../assets/images/icons/subtract-left-icon.svg';
+import subtractRightIcon from '../../../assets/images/icons/subtract-right-icon.svg';
 import lineLeft from '../../../assets/images/popup/lineleft.png';
 import lineRight from '../../../assets/images/popup/lineright.png';
-import ethIcon from '../../../assets/images/popup/ethicon.svg';
+import ethIcon from '../../../assets/images/icons/eth-white-icon-big.svg';
 
 const WinPopup = ({ close }) => (
   <div className="win-popup-container">
-    <img className="border__img__left" src={subtractLeft} alt="Subtract" />
-    <img className="border__img__right" src={subtractRight} alt="Subtract" />
+    <img className="border__img__left" src={subtractLeftIcon} alt="Subtract" />
+    <img className="border__img__right" src={subtractRightIcon} alt="Subtract" />
     <div className="close__button__div" onClick={close} aria-hidden="true">
       <Button variant="primary" icon={closeIcon} />
     </div>

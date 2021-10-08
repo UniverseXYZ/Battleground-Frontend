@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeroSection.scss';
 import Button from '../../button/Button';
-import icon2 from '../../../assets/images/icons/icon.svg';
+import soundIcon from '../../../assets/images/icons/sound-icon.svg';
 
 const HeroSection = () => (
   <div className="hero-section">
@@ -13,7 +13,7 @@ const HeroSection = () => (
       </div>
     </div>
     <div className="audio-icon">
-      <img src={icon2} alt="icon" />
+      <img src={soundIcon} alt="sound" />
     </div>
   </div>
 );
