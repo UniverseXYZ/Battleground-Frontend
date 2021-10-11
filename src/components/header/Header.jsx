@@ -90,7 +90,14 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="my--account--dropdown--bottom">
-                  <div className="link">
+                  <div
+                    className="link"
+                    aria-hidden="true"
+                    onClick={() => {
+                      history.push('/my-polymorphs');
+                      setShowDropdown(false);
+                    }}
+                  >
                     <img src={myPolymorphIcon} alt="My polymorphs" />
                     <span>My Polymorphs</span>
                   </div>
