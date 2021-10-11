@@ -2,7 +2,9 @@ import React from 'react';
 import SortByDropdown from '../../components/dropdowns/sortByDropdown/SortByDropdown';
 import SearchField from '../../components/input/searchField/SearchField';
 import PolymorphCard from '../../components/polymorphCard/PolymorphCard';
+import NoDataFound from '../../components/noDataFound/noDataFound';
 import './MyPolymorphs.scss';
+import { PolymorphCardDummyData } from '../../utils/fixtures/PolymorphCardDummyData';
 
 const MyPolymorphs = () => {
   console.log('123');
@@ -14,14 +16,17 @@ const MyPolymorphs = () => {
           <SearchField />
           <SortByDropdown />
         </div>
-        <div className="my--polymorphs">
-          <PolymorphCard />
-          <PolymorphCard />
-          <PolymorphCard />
-          <PolymorphCard />
-          <PolymorphCard />
-          <PolymorphCard />
-          <PolymorphCard />
+        <div className={`my--polymorphs ${PolymorphCardDummyData.length === 0 ? 'empty' : ''}`}>
+          {PolymorphCardDummyData.length !== 0 ? (
+            PolymorphCardDummyData.map((data) => <PolymorphCard data={data} />)
+          ) : (
+            <NoDataFound
+              title="No Polymorphs found"
+              desc="Buy Polymorphs on marketplace by clicking the button below"
+              btnText="Go to Marketplace"
+              btnAction="/"
+            />
+          )}
         </div>
       </div>
     </div>
