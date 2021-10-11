@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SortByDropdown from '../../components/dropdowns/sortByDropdown/SortByDropdown';
 import SearchField from '../../components/input/searchField/SearchField';
 import PolymorphCard from '../../components/polymorphCard/PolymorphCard';
 import './MyPolymorphs.scss';
 
 const MyPolymorphs = () => {
-  console.log('123');
+  const options = ['Recently Listed', 'Lowest Price First', 'Highest Price First', 'Recently Sold'];
+  const [selectedOption, setSelectedOption] = useState('Sort by');
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <div className="my--polymorphs--page">
       <div className="container">
         <h1 className="page--title">My Polymorphs</h1>
         <div className="search--sort--by--section">
-          <SearchField />
-          <SortByDropdown />
+          <SearchField value={searchValue} setValue={setSearchValue} />
+          <SortByDropdown
+            options={options}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
         </div>
         <div className="my--polymorphs">
           <PolymorphCard />
