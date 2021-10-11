@@ -1,0 +1,50 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.empty__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  > img {
+    width: 100px;
+  }
+
+  h3 {
+    font-family: $spaceGroteskFont;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: $white;
+    margin-top: 30px;
+  }
+  p.desc {
+    font-family: $spaceGroteskFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 160%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 6px auto 30px;
+    max-width: 295px;
+
+    &:disabled {
+      cursor: not-allowed;
+      background: #e6e6e6;
+      box-shadow: none;
+    }
+    @include sm {
+      max-width: 243px;
+    }
+  }
+  button.set_up {
+    display: block;
+    margin: 0 auto;
+  }
+}

@@ -49,12 +49,12 @@ header {
         }
       }
 
-      @include sm {
-        width: 253px;
-      }
-      @include xs {
-        width: 203px;
-      }
+      // @include sm {
+      //   width: 253px;
+      // }
+      // @include xs {
+      //   width: 203px;
+      // }
       img {
         max-width: 108px;
         @include sm {
