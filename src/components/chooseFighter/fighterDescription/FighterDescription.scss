@@ -1,0 +1,391 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.fighter__description__wrapper {
+  position: relative;
+  max-width: 372px;
+  width: 100%;
+
+  .left--wrapper {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+  }
+  .right--wrapper {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+  }
+
+  .open__close {
+    display: none;
+    @include sm {
+      display: block;
+      position: absolute;
+      left: 50%;
+      z-index: 9999999;
+      top: 10px;
+    }
+  }
+
+  &.mobile {
+    position: absolute;
+    left: 5%;
+    max-width: 90%;
+    z-index: 9;
+
+    .fighter__description {
+      height: fit-content;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 1px;
+    background: #286193;
+    top: 9px;
+    left: -3px;
+    transform: rotate(-45deg);
+    z-index: 99;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 1px;
+    background: #286193;
+    bottom: 10px;
+    right: -3px;
+    transform: rotate(-45deg);
+    z-index: 99;
+  }
+
+  .fighter__description {
+    background: linear-gradient(180deg, rgba(21, 38, 77, 0.8) 57.39%, rgba(21, 38, 77, 0.64) 100%);
+    border: 1px solid #286193;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    clip-path: polygon(0% 20px, 20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%);
+
+    .main__part {
+      padding: 30px;
+
+      .fighter__description__header {
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        margin-bottom: 35px;
+
+        .fighter__image__div {
+          position: relative;
+          .fighter__image {
+            width: 54px;
+            height: 54px;
+            margin-right: 21px;
+          }
+          .v__icon {
+            position: absolute;
+            right: 10px;
+            top: -10px;
+          }
+        }
+
+        h3.title {
+          font-family: $orbitronFont;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 23px;
+          color: $white;
+          margin: 0%;
+        }
+      }
+      .fighter__desc__attack {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .attack__div {
+          width: 100%;
+          margin-left: 16px;
+          .attack__head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+
+            p {
+              font-family: $spaceGroteskFont;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 15px;
+              color: #51c1fb;
+              margin: 0%;
+            }
+          }
+          .attack__bar {
+            width: 100%;
+            height: 17px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+            clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+            .fill__transparent {
+              width: 60%;
+              height: 100%;
+              background: linear-gradient(180deg, rgba(96, 198, 255, 0.6) 0%, rgba(63, 187, 245, 0.6) 100%);
+              border-radius: 2px;
+              clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+
+              .filled {
+                width: 66%;
+                height: 100%;
+                background: linear-gradient(180deg, #60c6ff 0%, #3fbbf5 100%);
+                border-radius: 2px;
+                clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+                box-shadow: 0px 0px 10px rgba(77, 192, 250, 0.4), inset 0px 1px 1px rgba(255, 255, 255, 0.3);
+              }
+            }
+          }
+        }
+      }
+      .fighter__desc__defence {
+        display: flex;
+        align-items: center;
+
+        .defence__div {
+          width: 100%;
+          margin-left: 16px;
+
+          .defence__head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+
+            p {
+              font-family: $spaceGroteskFont;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 15px;
+              color: #61bc76;
+              margin: 0%;
+            }
+          }
+        }
+        .defence__bar {
+          width: 100%;
+          height: 17px;
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 2px;
+          clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+
+          .fill__transparent {
+            width: 75%;
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(180deg, rgba(78, 217, 142, 0.5) 0%, rgba(69, 218, 129, 0.5) 100%);
+            clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+
+            .filled {
+              width: 80%;
+              height: 100%;
+              border-radius: 2px;
+              background: linear-gradient(180deg, #4ed98e 0%, #45da81 100%);
+              clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+            }
+          }
+        }
+      }
+      .fights__statistics {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 9px;
+        margin-top: 40px;
+
+        .statistics {
+          position: relative;
+          background: linear-gradient(180deg, rgba(127, 170, 255, 0.16) 0%, rgba(127, 186, 255, 0.064) 100%);
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          text-align: center;
+          padding: 11px 0px 15px;
+          clip-path: polygon(
+            10px -1px,
+            calc(100% + 1px) -1px,
+            calc(100% + 1px) calc(100% - 10px),
+            calc(100% - 10px) calc(100% + 1px),
+            -1px calc(100% + 1px),
+            -1px 10px
+          );
+
+          h2 {
+            font-family: $orbitronFont;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 26px;
+            line-height: 33px;
+            color: $white;
+            margin: 0%;
+          }
+          p {
+            font-family: $spaceGroteskFont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 8px;
+            line-height: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            margin: 2px 0% 0%;
+            text-transform: uppercase;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            width: 12px;
+            height: 1px;
+            top: 3.7px;
+            left: -2px;
+            transform: rotate(-45deg);
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            width: 12px;
+            height: 1px;
+            bottom: 4px;
+            right: -2.5px;
+            transform: rotate(-42deg);
+          }
+        }
+      }
+    }
+    .fight__history {
+      margin-bottom: 70px;
+      h2 {
+        font-family: $orbitronFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: $white;
+        margin: 0% 0% 20px 30px;
+      }
+      table {
+        thead {
+          font-family: $spaceGroteskFont;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 8px;
+          line-height: 10px;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.4);
+          text-align: left;
+
+          th {
+            padding-bottom: 12px;
+          }
+          :first-child {
+            padding-left: 30px;
+          }
+
+          :last-child {
+            text-align: right;
+            padding-right: 30px;
+          }
+        }
+        tbody {
+          position: relative;
+          .line {
+            position: absolute;
+            top: 0px;
+            left: 30px;
+            width: calc(100% - 60px);
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+          }
+          tr {
+            cursor: pointer;
+            td {
+              padding: 8px 0;
+              &.opponent {
+                font-family: $spaceGroteskFont;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                color: $white;
+                padding-left: 30px;
+              }
+              &.win__loss {
+                font-family: $orbitronFont;
+                font-style: normal;
+                font-weight: 900;
+                font-size: 10px;
+                line-height: 13px;
+                text-transform: uppercase;
+
+                .win {
+                  width: fit-content;
+                  padding: 3px 8px;
+                  background: linear-gradient(180deg, rgba(78, 217, 142, 0.2) 0%, rgba(69, 218, 129, 0.2) 100%);
+                  color: #11ff9b;
+                  border-radius: 2px;
+                }
+                .lose {
+                  width: fit-content;
+                  padding: 3px 8px;
+                  color: #ff447c;
+                  background: linear-gradient(180deg, rgba(254, 88, 149, 0.2) 0%, rgba(161, 24, 70, 0.2) 100%);
+                  border-radius: 2px;
+                }
+              }
+              &.wager__amount {
+                font-family: $spaceGroteskFont;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                color: $white;
+                text-align: right;
+                padding-right: 30px;
+              }
+            }
+            &:hover {
+              background: rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+      }
+      @include lg {
+        margin: 30px 0;
+      }
+      @include sm {
+        margin: 0 0 70px;
+      }
+    }
+    @include lg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @include md {
+      gap: 0;
+    }
+    @include sm {
+      grid-template-columns: auto;
+      overflow-y: auto;
+      height: 400px;
+    }
+  }
+  @include lg {
+    max-width: none;
+    height: fit-content;
+  }
+}

@@ -6,6 +6,7 @@ import Header from './components/header/Header.jsx';
 import Footer from './components/footer/Footer.jsx';
 import LandingPage from './containers/landingPage/LandingPage.jsx';
 import Loading from './components/loading/Loading';
+import ChooseFighter from './containers/chooseFighter/ChooseFighter';
 
 const App = () => {
   const location = useLocation();
@@ -36,6 +37,7 @@ const App = () => {
           <Header />
           <Switch>
             <Route exact path="/" component={() => <LandingPage />} />
+            <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
             <Route path="*" component={() => <LandingPage />} />
           </Switch>
           <Footer />
