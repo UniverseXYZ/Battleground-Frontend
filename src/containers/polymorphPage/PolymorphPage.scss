@@ -1,0 +1,204 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.polymorph--page {
+  background: radial-gradient(50% 50% at 50% 50%, #293c75 0%, #121a33 100%), #172242;
+  padding: 54px 60px 100px;
+  &--section {
+    .go--back--polymorph {
+      font-family: $spaceGroteskFont;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-feature-settings: "ss02" on, "ss03" on, "ss04" on;
+      color: $white;
+      cursor: pointer;
+      > span {
+        margin-left: 10px;
+      }
+    }
+    .polymorph--page--content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 60px;
+      grid-gap: 125px;
+      .avatar--section {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 66px;
+        .polymorph--card--section {
+          .polymorph--name {
+            display: none;
+          }
+        }
+        .attack--and--defense--progress {
+          display: block;
+          position: relative;
+          background: linear-gradient(180deg, rgba(21, 38, 77, 0.8) 255.46%, rgba(21, 38, 77, 0.64) 445.16%);
+          border: 1px solid #286193;
+          box-sizing: border-box;
+          backdrop-filter: blur(10px);
+          padding: 30px 35px;
+          clip-path: polygon(
+            0% 20px,
+            20px 0%,
+            calc(100% + 1px) 0%,
+            calc(100% + 1px) calc(100% - 20px),
+            calc(100% - 20px) calc(100% + 1px),
+            0% calc(100% + 1px)
+          );
+          &:after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: 10px;
+            width: 1px;
+            height: 30px;
+            transform: rotate(45deg);
+            background-color: #286193;
+            z-index: 111;
+          }
+          &:before {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            right: 10px;
+            width: 1px;
+            height: 30px;
+            transform: rotate(45deg);
+            background-color: #286193;
+            z-index: 111;
+          }
+          @include md {
+            display: none;
+          }
+        }
+      }
+      .options--section {
+        .options--header {
+          margin-bottom: 40px;
+          .name {
+            font-family: $orbitronFont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 26px;
+            line-height: 140%;
+            color: #ffffff;
+            @include md {
+              font-size: 20px;
+            }
+          }
+          .polymorph--details {
+            display: flex;
+            gap: 12px;
+            margin: 26px 0;
+            flex-wrap: wrap;
+            div {
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 4px;
+              padding: 6px 16px;
+              font-family: $spaceGroteskFont;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 14px;
+              line-height: 150%;
+              display: flex;
+              align-items: center;
+              color: $white;
+            }
+          }
+
+          .description {
+            font-family: $spaceGroteskFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 160%;
+            color: rgba(255, 255, 255, 0.6);
+          }
+        }
+        .attack--and--defense--progress--tablet {
+          display: none;
+          @include md {
+            position: relative;
+            background: linear-gradient(180deg, rgba(21, 38, 77, 0.8) 255.46%, rgba(21, 38, 77, 0.64) 445.16%);
+            border: 1px solid #286193;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+            padding: 30px 35px;
+            margin: 40px 0 50px;
+            clip-path: polygon(
+              0% 20px,
+              20px 0%,
+              calc(100% + 1px) 0%,
+              calc(100% + 1px) calc(100% - 20px),
+              calc(100% - 20px) calc(100% + 1px),
+              0% calc(100% + 1px)
+            );
+            &:after {
+              content: "";
+              position: absolute;
+              top: -7px;
+              left: 10px;
+              width: 1px;
+              height: 30px;
+              transform: rotate(45deg);
+              background-color: #286193;
+              z-index: 111;
+            }
+            &:before {
+              content: "";
+              position: absolute;
+              bottom: -7px;
+              right: 10px;
+              width: 1px;
+              height: 30px;
+              transform: rotate(45deg);
+              background-color: #286193;
+              z-index: 111;
+            }
+            display: block;
+          }
+        }
+        .options--body {
+          margin-bottom: 50px;
+          .scramble--properties {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 21px;
+          }
+        }
+        .option--buttons {
+          display: flex;
+          gap: 22px;
+          .secondary {
+            flex-direction: row-reverse;
+            .icon {
+              margin-right: 0 !important;
+              margin-left: 11px;
+            }
+          }
+          @include sm {
+            display: grid;
+            grid-template-columns: 1fr;
+            button {
+              width: 100%;
+              justify-content: center;
+            }
+          }
+        }
+      }
+      @include md {
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+      }
+    }
+  }
+  @include sm {
+    padding: 40px 20px 80px;
+  }
+}
