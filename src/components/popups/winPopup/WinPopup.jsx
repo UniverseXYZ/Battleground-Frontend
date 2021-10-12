@@ -2,8 +2,6 @@ import React from 'react';
 import './WinPopup.scss';
 import PropTypes from 'prop-types';
 import win from '../../../assets/images/popup/win-min.png';
-import fighterAvatar1 from '../../../assets/images/popup/fighter1.png';
-import fighterAvatar2 from '../../../assets/images/popup/fighter2.png';
 import Button from '../../button/Button';
 import closeIcon from '../../../assets/images/icons/close-icon.svg';
 import subtractLeftIcon from '../../../assets/images/icons/subtract-left-icon.svg';
@@ -12,7 +10,7 @@ import lineLeft from '../../../assets/images/popup/lineleft.png';
 import lineRight from '../../../assets/images/popup/lineright.png';
 import ethIcon from '../../../assets/images/icons/eth-white-icon-big.svg';
 
-const WinPopup = ({ close }) => (
+const WinPopup = ({ close, data }) => (
   <div className="win-popup-container">
     <img className="border__img__left" src={subtractLeftIcon} alt="Subtract" />
     <img className="border__img__right" src={subtractRightIcon} alt="Subtract" />
@@ -27,45 +25,45 @@ const WinPopup = ({ close }) => (
         <div className="score-section">
           <div className="score-box">
             <div className="fighter--image">
-              <img src={fighterAvatar1} alt="avatar" />
+              <img src={data.me.image} alt="avatar" />
             </div>
             <div className="fighter--score">
-              <h1>Your Score: 34</h1>
+              <h1>Your Score: {data.me.score}</h1>
             </div>
             <div className="fighter--info--box">
               <div>
                 <p>Wallet:</p>
-                <h3>0xd17dw...</h3>
+                <h3>{`${data.me.eth_address.substring(0, 8)}...`}</h3>
               </div>
               <div>
                 <p>Choice:</p>
-                <h3>Attack</h3>
+                <h3>{data.me.choice}</h3>
               </div>
               <div>
                 <p>Attack:</p>
-                <h3>189</h3>
+                <h3>{data.me.attack}</h3>
               </div>
             </div>
           </div>
           <div className="score-box">
             <div className="fighter--image">
-              <img src={fighterAvatar2} alt="avatar" />
+              <img src={data.opponent.image} alt="avatar" />
             </div>
             <div className="fighter--score">
-              <h1>Opponent’s Score: 28</h1>
+              <h1>Opponent’s Score: {data.opponent.score}</h1>
             </div>
             <div className="fighter--info--box">
               <div>
                 <p>Wallet:</p>
-                <h3>0xd17dw...</h3>
+                <h3>{`${data.opponent.eth_address.substring(0, 8)}...`}</h3>
               </div>
               <div>
                 <p>Choice:</p>
-                <h3>Defence</h3>
+                <h3>{data.opponent.choice}</h3>
               </div>
               <div>
-                <p>Attack:</p>
-                <h3>160</h3>
+                <p>Defence:</p>
+                <h3>{data.opponent.defence}</h3>
               </div>
             </div>
           </div>
@@ -83,7 +81,7 @@ const WinPopup = ({ close }) => (
         </div>
         <div className="popup-footer-section">
           <img src={ethIcon} alt="icon" />
-          <h1>10</h1>
+          <h1>{data.rewards}</h1>
         </div>
       </div>
     </div>
@@ -91,5 +89,6 @@ const WinPopup = ({ close }) => (
 );
 WinPopup.propTypes = {
   close: PropTypes.func.isRequired,
+  data: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 export default WinPopup;

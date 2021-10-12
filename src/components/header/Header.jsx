@@ -101,7 +101,14 @@ const Header = () => {
                     <img src={myPolymorphIcon} alt="My polymorphs" />
                     <span>My Polymorphs</span>
                   </div>
-                  <div className="link">
+                  <div
+                    className="link"
+                    aria-hidden="true"
+                    onClick={() => {
+                      history.push('/my-battles-history');
+                      setShowDropdown(false);
+                    }}
+                  >
                     <img src={myBattleHistoryIcon} alt="My battles history" />
                     <span>My battles history</span>
                   </div>

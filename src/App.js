@@ -8,6 +8,7 @@ import LandingPage from './containers/landingPage/LandingPage.jsx';
 import Battlegrounds from './containers/battlegrounds/Battlegrounds.jsx';
 import MyPolymorphs from './containers/myPolymorphs/MyPolymorphs.jsx';
 import ChooseFighter from './containers/chooseFighter/ChooseFighter.jsx';
+import MyBattlesHistory from './containers/myBattlesHistory/MyBattlesHistory';
 
 const App = () => {
   const location = useLocation();
@@ -46,6 +47,7 @@ const App = () => {
           <Route exact path="/" component={() => <LandingPage />} />
           <Route exact path="/battlegrounds" component={() => <Battlegrounds />} />
           <Route exact path="/my-polymorphs" component={() => <MyPolymorphs />} />
+          <Route exact path="/my-battles-history" component={() => <MyBattlesHistory />} />
           <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
           <Route path="*" component={() => <LandingPage />} />
         </Switch>
