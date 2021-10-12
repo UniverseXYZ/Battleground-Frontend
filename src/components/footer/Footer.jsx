@@ -1,11 +1,11 @@
 import React from 'react';
 import './Footer.scss';
-import battleuniverse from '../../assets/images/landingPage/battle-universe.svg';
-import Button from '../button/Button';
-import inIcon from '../../assets/images/icons/in.svg';
-import twitter from '../../assets/images/icons/twitter.svg';
-import fb from '../../assets/images/icons/fbIcon.svg';
-import Input from '../input/Input';
+import Button from '../button/Button.jsx';
+import Input from '../input/Input.jsx';
+import linkedinIcon from '../../assets/images/icons/linkedin-icon.svg';
+import twitterIcon from '../../assets/images/icons/twitter-icon.svg';
+import fbIcon from '../../assets/images/icons/fb-icon.svg';
+import battleuniverse from '../../assets/images/icons/app-icon.svg';
 
 const Footer = () => (
   <div className="footer-section">
@@ -41,13 +41,13 @@ const Footer = () => (
         </div>
         <div className="links">
           <div>
-            <img src={inIcon} alt="icon" />
+            <img src={linkedinIcon} alt="linkedin" />
           </div>
           <div>
-            <img src={twitter} alt="icon" />
+            <img src={twitterIcon} alt="twitter" />
           </div>
           <div>
-            <img src={fb} alt="icon" />
+            <img src={fbIcon} alt="facebook" />
           </div>
         </div>
       </div>

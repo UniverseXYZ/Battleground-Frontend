@@ -1,12 +1,12 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
 .hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 730px;
   padding: 0 60px;
-  background-image: url('../../../assets/images/landingPage/heroBackground.png');
+  background-image: url("../../../assets/images/landingPage/heroBackground.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,7 +14,7 @@
   .audio-icon {
     position: fixed;
     left: 25px;
-    bottom: 215px;
+    bottom: 172px;
     z-index: 9;
     @include md {
       display: none;

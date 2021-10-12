@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import fighterImage from '../../../assets/images/polymorph-fighter-little.png';
-import subtractLeft from '../../../assets/images/icons/subtract-left.svg';
-import subtractRight from '../../../assets/images/icons/subtract-right.svg';
+import subtractLeft from '../../../assets/images/icons/subtract-left-icon.svg';
+import subtractRight from '../../../assets/images/icons/subtract-right-icon.svg';
 import arrowUp from '../../../assets/images/icons/arrow-up.svg';
 import attackIcon from '../../../assets/images/icons/attack-image.svg';
 import defenceIcon from '../../../assets/images/icons/defence-image.svg';

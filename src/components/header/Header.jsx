@@ -4,21 +4,20 @@ import Popup from 'reactjs-popup';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useHistory } from 'react-router';
 import AppContext from '../../ContextAPI';
-import GoBack from '../goBack/GoBack.jsx';
+import GoPreviousPage from '../goPreviousPage/GoPreviousPage.jsx';
 import Button from '../button/Button.jsx';
-import SelectBattleWalletPopup from '../popups/SelectBattleWalletPopup.jsx';
+import SelectWalletPopup from '../popups/selectWalletPopup/SelectWalletPopup.jsx';
 import useOutsideClick from '../../utils/hooks/useOutsideClick.js';
-import appLogo from '../../assets/images/landingPage/battle-universe.svg';
-import connectWalletIcon from '../../assets/images/icons/plus.svg';
+import connectWalletIcon from '../../assets/images/icons/plus-icon.svg';
 import myAccountIcon from '../../assets/images/icons/my-account-icon.svg';
-import eth from '../../assets/images/icons/eth-white-icon.svg';
-import myPolymorphIcon from '../../assets/images/icons/my-polymorphs.svg';
-import myBattleHistoryIcon from '../../assets/images/icons/my-battles-history.svg';
-import signOutIcon from '../../assets/images/icons/sign-out.svg';
-import copyIcon from '../../assets/images/icons/copy.svg';
+import ethIcon from '../../assets/images/icons/eth-white-icon-small.svg';
+import myPolymorphIcon from '../../assets/images/icons/my-polymorphs-icon.svg';
+import myBattleHistoryIcon from '../../assets/images/icons/my-battles-history-icon.svg';
+import signOutIcon from '../../assets/images/icons/sign-out-icon.svg';
+import copyIcon from '../../assets/images/icons/copy-icon.svg';
 
 const Header = () => {
-  const { isWalletConnected, setIsWalletConnected } = useContext(AppContext);
+  const { isWalletConnected, setIsWalletConnected, goPreviousPage } = useContext(AppContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const ref = useRef();
   const history = useHistory();
@@ -31,10 +30,16 @@ const Header = () => {
 
   return (
     <header>
-      <div className="back--btn">{/* <GoBack text="Home" /> */}</div>
+      <div className="back--btn">
+        {goPreviousPage.text ? (
+          <GoPreviousPage text={goPreviousPage.text} path={goPreviousPage.path} />
+        ) : (
+          <></>
+        )}
+      </div>
       <div className="logo-div">
         <div className="logo" onClick={() => history.push('/')} aria-hidden="true">
-          <div className="background">{/* <img src={appLogo} alt="App logo" /> */}</div>
+          <div className="background" />
         </div>
         <div className="left" />
         <div className="right" />
@@ -76,7 +81,7 @@ const Header = () => {
                   </div>
                   <div className="my--account--price">
                     <div className="icon">
-                      <img src={eth} alt="ETH" />
+                      <img src={ethIcon} alt="ETH" />
                     </div>
                     <div className="price">
                       <span>6,24 ETH</span>
@@ -85,7 +90,14 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="my--account--dropdown--bottom">
-                  <div className="link">
+                  <div
+                    className="link"
+                    aria-hidden="true"
+                    onClick={() => {
+                      history.push('/my-polymorphs');
+                      setShowDropdown(false);
+                    }}
+                  >
                     <img src={myPolymorphIcon} alt="My polymorphs" />
                     <span>My Polymorphs</span>
                   </div>
@@ -125,7 +137,7 @@ const Header = () => {
               modal
               lockScroll
             >
-              {(close) => <SelectBattleWalletPopup close={close} />}
+              {(close) => <SelectWalletPopup close={close} />}
             </Popup>
           </div>
         )}

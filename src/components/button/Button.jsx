@@ -3,17 +3,21 @@ import PropTypes from 'prop-types';
 import './Button.scss';
 
 const Button = React.forwardRef(
-  ({ variant, icon, text, hideTextOnMobile, showIconOnMobileOnly, ...restProps }, ref) => {
+  (
+    { variant, icon, text, hideTextOnMobile, showIconOnMobileOnly, disabled, ...restProps },
+    ref
+  ) => {
     const classNames = restProps.className;
     delete restProps.className;
     return (
-      <div className="button--wrapper">
+      <div className={`button--wrapper${disabled ? ' disabled' : ''}`}>
         <div className={`primary-box-shadow${variant === 'primary' ? ' opacity' : ''}`} />
         <button
           className={`${classNames || ''} ${variant}${
             hideTextOnMobile ? ' hide--text--on--mobile' : ''
           }`}
           type="button"
+          disabled={disabled}
           {...restProps}
         >
           {icon && (
@@ -37,6 +41,7 @@ Button.propTypes = {
   text: PropTypes.string,
   hideTextOnMobile: PropTypes.bool,
   showIconOnMobileOnly: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -44,6 +49,7 @@ Button.defaultProps = {
   text: null,
   hideTextOnMobile: false,
   showIconOnMobileOnly: false,
+  disabled: false,
 };
 
 export default Button;

@@ -5,22 +5,30 @@ import AppContext from './ContextAPI';
 import Header from './components/header/Header.jsx';
 import Footer from './components/footer/Footer.jsx';
 import LandingPage from './containers/landingPage/LandingPage.jsx';
-import Loading from './components/loading/Loading';
-import ChooseFighter from './containers/chooseFighter/ChooseFighter';
+import Battlegrounds from './containers/battlegrounds/Battlegrounds.jsx';
+import MyPolymorphs from './containers/myPolymorphs/MyPolymorphs.jsx';
+import ChooseFighter from './containers/chooseFighter/ChooseFighter.jsx';
 
 const App = () => {
   const location = useLocation();
   const [isWalletConnected, setIsWalletConnected] = useState(false);
-  const [showLoading, setShowLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowLoading(false);
-    }, 6000);
-  }, []);
+  const [goPreviousPage, setGoPreviousPage] = useState({ text: '', path: '' });
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    switch (location.pathname) {
+      case '/':
+        setGoPreviousPage({ text: '', path: null });
+        break;
+      case '/battlegrounds':
+        setGoPreviousPage({ text: 'Home', path: '/' });
+        break;
+      case '/choose-fighter':
+        setGoPreviousPage({ text: 'Battlegrounds', path: '/battlegrounds' });
+        break;
+      default:
+        setGoPreviousPage({ text: '', path: '/' });
+    }
   }, [location]);
 
   return (
@@ -28,21 +36,21 @@ const App = () => {
       value={{
         isWalletConnected,
         setIsWalletConnected,
+        goPreviousPage,
+        setGoPreviousPage,
       }}
     >
-      {showLoading ? (
-        <Loading />
-      ) : (
-        <>
-          <Header />
-          <Switch>
-            <Route exact path="/" component={() => <LandingPage />} />
-            <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
-            <Route path="*" component={() => <LandingPage />} />
-          </Switch>
-          <Footer />
-        </>
-      )}
+      <Header />
+      <div>
+        <Switch>
+          <Route exact path="/" component={() => <LandingPage />} />
+          <Route exact path="/battlegrounds" component={() => <Battlegrounds />} />
+          <Route exact path="/my-polymorphs" component={() => <MyPolymorphs />} />
+          <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
+          <Route path="*" component={() => <LandingPage />} />
+        </Switch>
+      </div>
+      <Footer />
     </AppContext.Provider>
   );
 };

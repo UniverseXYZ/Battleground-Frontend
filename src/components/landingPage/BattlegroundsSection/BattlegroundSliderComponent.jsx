@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import './SliderComponent.scss';
 import uuid from 'react-uuid';
-import eth from '../../../assets/images/icons/eth-white-icon.svg';
+import ethIcon from '../../../assets/images/icons/eth-white-icon-small.svg';
 import cutBorder from '../../../assets/images/landingPage/cut-border-blue.png';
 import { BattlegroundsDummyData } from '../../../utils/fixtures/BattlegroundsDummyData';
 
@@ -45,7 +45,7 @@ const BattlegroundSliderComponent = () => {
             <img src={cutBorder} alt="border-effect" className="bottom-right-border-effect" />
             <div style={{ width: sliderWidth }} className="slider-item">
               <div className="wallet-bg">
-                <img src={eth} alt="eth" />
+                <img src={ethIcon} alt="eth" />
                 <h3>{item.price}</h3>
               </div>
               <img src={item.background} alt="Slider 1" />

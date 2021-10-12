@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import { Carousel } from '3d-react-carousal';
 import Coverflow from 'react-coverflow';
 import uuidv4 from 'react-uuid';
-import eth from '../../../assets/images/icons/eth-white-icon.svg';
+import eth from '../../../assets/images/icons/eth-white-icon-small.svg';
 import fighterImage from '../../../assets/images/polymorph-fighter.png';
 import attackIcon from '../../../assets/images/icons/attack-icon.svg';
 import defenceIcon from '../../../assets/images/icons/defence-icon.svg';
