@@ -5,8 +5,9 @@ import AppContext from './ContextAPI';
 import Header from './components/header/Header.jsx';
 import Footer from './components/footer/Footer.jsx';
 import LandingPage from './containers/landingPage/LandingPage.jsx';
-import Battlegrounds from './containers/battlegrounds/Battlegrounds';
-import MyPolymorphs from './containers/myPolymorphs/MyPolymorphs';
+import Battlegrounds from './containers/battlegrounds/Battlegrounds.jsx';
+import MyPolymorphs from './containers/myPolymorphs/MyPolymorphs.jsx';
+import ChooseFighter from './containers/chooseFighter/ChooseFighter.jsx';
 
 const App = () => {
   const location = useLocation();
@@ -21,6 +22,9 @@ const App = () => {
         break;
       case '/battlegrounds':
         setGoPreviousPage({ text: 'Home', path: '/' });
+        break;
+      case '/choose-fighter':
+        setGoPreviousPage({ text: 'Battlegrounds', path: '/battlegrounds' });
         break;
       default:
         setGoPreviousPage({ text: '', path: '/' });
@@ -42,6 +46,7 @@ const App = () => {
           <Route exact path="/" component={() => <LandingPage />} />
           <Route exact path="/battlegrounds" component={() => <Battlegrounds />} />
           <Route exact path="/my-polymorphs" component={() => <MyPolymorphs />} />
+          <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
           <Route path="*" component={() => <LandingPage />} />
         </Switch>
       </div>

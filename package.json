@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "3d-react-carousal": "^4.0.2",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "@babel/register": "^7.13.16",
@@ -19,6 +20,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-copy-to-clipboard": "^5.0.3",
+    "react-coverflow": "^0.2.20",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
