@@ -15,7 +15,6 @@ import myPolymorphIcon from '../../assets/images/icons/my-polymorphs-icon.svg';
 import myBattleHistoryIcon from '../../assets/images/icons/my-battles-history-icon.svg';
 import signOutIcon from '../../assets/images/icons/sign-out-icon.svg';
 import copyIcon from '../../assets/images/icons/copy-icon.svg';
-import NoPolymorphFoundPopup from '../popups/noPolymorphFoundPopup/NoPolymorphFoundPopup';
 
 const Header = () => {
   const { isWalletConnected, setIsWalletConnected, goPreviousPage } = useContext(AppContext);
@@ -142,7 +141,7 @@ const Header = () => {
               onClick={() => setShowSelectWalletPopup(true)}
             />
             <Popup closeOnDocumentClick={false} modal lockScroll open={showSelectWalletPopup}>
-              <NoPolymorphFoundPopup close={() => setShowSelectWalletPopup(false)} />
+              <SelectWalletPopup close={() => setShowSelectWalletPopup(false)} />
             </Popup>
           </div>
         )}

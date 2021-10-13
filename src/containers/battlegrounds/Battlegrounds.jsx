@@ -5,7 +5,7 @@ import { BattlegroundsDummyData } from '../../utils/fixtures/BattlegroundsDummyD
 import soundIcon from '../../assets/images/icons/sound-icon.svg';
 
 const Battlegrounds = () => (
-  <div className="battlegrounds--section">
+  <div className="battlegrounds--page">
     <div className="audio-icon">
       <img src={soundIcon} alt="icon" />
     </div>
