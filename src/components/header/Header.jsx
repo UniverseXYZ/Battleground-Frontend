@@ -15,6 +15,7 @@ import myPolymorphIcon from '../../assets/images/icons/my-polymorphs-icon.svg';
 import myBattleHistoryIcon from '../../assets/images/icons/my-battles-history-icon.svg';
 import signOutIcon from '../../assets/images/icons/sign-out-icon.svg';
 import copyIcon from '../../assets/images/icons/copy-icon.svg';
+import NoPolymorphFoundPopup from '../popups/noPolymorphFoundPopup/NoPolymorphFoundPopup';
 
 const Header = () => {
   const { isWalletConnected, setIsWalletConnected, goPreviousPage } = useContext(AppContext);
@@ -23,6 +24,7 @@ const Header = () => {
   const history = useHistory();
   const PLACEHOLDER_ETHEREUM_ADDRESS = '0x5493a5a6f...ef8b';
   const [copied, setCopied] = useState(false);
+  const [showSelectWalletPopup, setShowSelectWalletPopup] = useState(false);
 
   useOutsideClick(ref, () => {
     setShowDropdown(false);
@@ -131,20 +133,16 @@ const Header = () => {
           </div>
         ) : (
           <div>
-            <Popup
-              trigger={
-                <Button
-                  variant="secondary"
-                  text="Connect wallet"
-                  icon={connectWalletIcon}
-                  hideTextOnMobile
-                  showIconOnMobileOnly
-                />
-              }
-              modal
-              lockScroll
-            >
-              {(close) => <SelectWalletPopup close={close} />}
+            <Button
+              variant="secondary"
+              text="Connect wallet"
+              icon={connectWalletIcon}
+              hideTextOnMobile
+              showIconOnMobileOnly
+              onClick={() => setShowSelectWalletPopup(true)}
+            />
+            <Popup closeOnDocumentClick={false} modal lockScroll open={showSelectWalletPopup}>
+              <NoPolymorphFoundPopup close={() => setShowSelectWalletPopup(false)} />
             </Popup>
           </div>
         )}

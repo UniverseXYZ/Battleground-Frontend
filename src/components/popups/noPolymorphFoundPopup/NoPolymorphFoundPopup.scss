@@ -1,0 +1,46 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.popup.no--polymorph--found {
+  padding: 84px 64px !important;
+  @include sm {
+    padding: 40px 20px !important;
+  }
+}
+
+.no--polymorph--found--popup {
+  h1.title {
+    font-family: $orbitronFont;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    color: $white;
+    margin: 0;
+    @include xs {
+      font-size: 24px;
+    }
+  }
+  p.desc {
+    font-family: $spaceGroteskFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: $white;
+    opacity: 0.8;
+    margin: 30px auto 50px;
+    max-width: 458px;
+  }
+
+  .popup__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+  }
+}
