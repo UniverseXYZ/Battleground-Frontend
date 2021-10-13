@@ -1,13 +1,17 @@
 import React from 'react';
+import { useLocation } from 'react-router';
 import attackIcon from '../../assets/images/icons/attack-icon.svg';
 import defenceIcon from '../../assets/images/icons/defence-icon.svg';
+import soundIcon from '../../assets/images/icons/sound-icon.svg';
 import Fighter from '../../components/chooseFighter/fighter/Fighter';
 import FighterDescription from '../../components/chooseFighter/fighterDescription/FighterDescription';
 
 const ChooseFighter = () => {
-  const asd = '';
+  const location = useLocation();
+  const battleground = location.state ? location.state.battleground : null;
+
   return (
-    <div className="choose__fighter">
+    <div className="choose__fighter" style={{ backgroundImage: `url(${battleground.background})` }}>
       <Fighter />
       <FighterDescription />
       <div className="fighter__buttons__tablet">
@@ -42,6 +46,7 @@ const ChooseFighter = () => {
           </div>
         </div>
       </div>
+      <img src={soundIcon} alt="Audio" className="audio__icon" />
     </div>
   );
 };

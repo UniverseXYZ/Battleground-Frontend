@@ -11,7 +11,7 @@ import './Fighter.scss';
 
 const Fighter = () => {
   const [goToSlide, setGoToSlide] = useState(0);
-  const [offsetRadius, setOffsetRadius] = useState(2);
+  const [offsetRadius, setOffsetRadius] = useState(3);
   const [showNavigation, setShowNavigation] = useState(true);
   const slides = [
     <img src="https://storage.googleapis.com/polymorph-images/190516033012210100.jpg" alt="1" />,
@@ -20,7 +20,7 @@ const Fighter = () => {
     <img src="https://storage.googleapis.com/polymorph-images/302805031331190308.jpg" alt="4" />,
     <img src="https://storage.googleapis.com/polymorph-images/240010060019140807.jpg" alt="5" />,
     <img src="https://storage.googleapis.com/polymorph-images/012310083012000600.jpg" alt="6" />,
-    <img src="https://storage.googleapis.com/polymorph-images/141817010021040505.jpg" alt="7" />,
+    <img src="https://storage.googleapis.com/polymorph-images/021129101515240110.jpg" alt="7" />,
   ];
 
   return (
@@ -37,61 +37,74 @@ const Fighter = () => {
       </div>
       <p className="fighter__total">23 polymorphs total</p>
       <div className="fighter__slider">
-        {/* <Carousel
+        <Carousel
           slides={slides}
           goToSlide={0}
           offsetRadius={offsetRadius}
           showNavigation
           autoplat
           interval={1000}
-        /> */}
-        <Coverflow
+        />
+        {/* <Coverflow
           displayQuantityOfSide={3}
           navigation
+          infiniteScroll
           enableScroll
           enableHeading={false}
           clickable
           active={0}
         >
-          <img
-            src="https://storage.googleapis.com/polymorph-images/190516033012210100.jpg"
-            alt="1"
-            style={{
-              display: 'block',
-              width: '100%',
-            }}
-          />
-          <img
-            src="https://storage.googleapis.com/polymorph-images/151221083106060007.jpg"
-            alt="2"
-            data-action="http://andyyou.github.io/react-coverflow/"
-          />
-          <img
-            src="https://storage.googleapis.com/polymorph-images/141817010021040505.jpg"
-            alt="3"
-            data-action="http://andyyou.github.io/react-coverflow/"
-          />
-          <img
-            src="https://storage.googleapis.com/polymorph-images/302805031331190308.jpg"
-            alt="4"
-            data-action="http://andyyou.github.io/react-coverflow/"
-          />
-          <img
-            src="https://storage.googleapis.com/polymorph-images/240010060019140807.jpg"
-            alt="5"
-            data-action="http://andyyou.github.io/react-coverflow/"
-          />
-          <img
-            src="https://storage.googleapis.com/polymorph-images/012310083012000600.jpg"
-            alt="6"
-            data-action="http://andyyou.github.io/react-coverflow/"
-          />
-          <img
-            src="https://storage.googleapis.com/polymorph-images/141817010021040505.jpg"
-            alt="title or description"
-            data-action="http://andyyou.github.io/react-coverflow/"
-          />
-        </Coverflow>
+          <figure className="coverflow__figure__3bk_C" data-radium="true">
+            <img
+              src="https://storage.googleapis.com/polymorph-images/190516033012210100.jpg"
+              alt="1"
+              style={{
+                display: 'block',
+                width: '100%',
+              }}
+            />
+          </figure>
+          <figure className="coverflow__figure__3bk_C" data-radium="true">
+            <img
+              src="https://storage.googleapis.com/polymorph-images/151221083106060007.jpg"
+              alt="2"
+            />
+          </figure>
+          <figure className="coverflow__figure__3bk_C" data-radium="true">
+            <img
+              src="https://storage.googleapis.com/polymorph-images/141817010021040505.jpg"
+              alt="3"
+            />
+          </figure>
+          <figure
+            className="coverflow__figure__3bk_C"
+            data-radium="true"
+            style={({ transform: 'translate(0px)' }, { zIndex: '10' })}
+          >
+            <img
+              src="https://storage.googleapis.com/polymorph-images/302805031331190308.jpg"
+              alt="4"
+            />
+          </figure>
+          <figure className="coverflow__figure__3bk_C" data-radium="true">
+            <img
+              src="https://storage.googleapis.com/polymorph-images/240010060019140807.jpg"
+              alt="5"
+            />
+          </figure>
+          <figure className="coverflow__figure__3bk_C" data-radium="true">
+            <img
+              src="https://storage.googleapis.com/polymorph-images/012310083012000600.jpg"
+              alt="6"
+            />
+          </figure>
+          <figure className="coverflow__figure__3bk_C" data-radium="true">
+            <img
+              src="https://storage.googleapis.com/polymorph-images/141817010021040505.jpg"
+              alt="7"
+            />
+          </figure>
+        </Coverflow> */}
       </div>
       <div className="fighter__buttons">
         <div className="attack__button__wrapper">
