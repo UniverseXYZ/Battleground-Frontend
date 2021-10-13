@@ -48,7 +48,7 @@ const BattlegroundCard = ({ battleground }) => {
             <Button
               variant="primary"
               text="Battle"
-              onClick={() => history.push('/choose-fighter')}
+              onClick={() => history.push('/choose-fighter', { battleground })}
             />
             <Button variant="secondary" text="Claim" disabled={battleground.rewards === 0} />
           </div>
