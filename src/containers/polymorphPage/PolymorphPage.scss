@@ -34,6 +34,18 @@
           .polymorph--name {
             display: none;
           }
+          .polymorph--card {
+            &:hover {
+              .top-left-border-hover-effect,
+              .bottom-right-border-hover-effect {
+                visibility: hidden;
+              }
+              .bottom-right-border-effect,
+              .left-top-border-effect {
+                visibility: visible;
+              }
+            }
+          }
         }
         .attack--and--defense--progress {
           display: block;
@@ -170,6 +182,25 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 21px;
+          }
+          .fight__history {
+            > h2 {
+              display: none;
+            }
+          }
+          .empty__data {
+            margin-top: 90px;
+            > img {
+              width: 70px;
+            }
+            > h3,
+            .button--wrapper {
+              display: none;
+            }
+            .desc {
+              margin-top: 20px;
+              font-size: 16px;
+            }
           }
         }
         .option--buttons {

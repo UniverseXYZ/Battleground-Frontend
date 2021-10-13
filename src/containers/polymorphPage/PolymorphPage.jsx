@@ -9,6 +9,9 @@ import Tabs from '../../components/tabs/Tabs';
 import PolymorphProperties from '../../components/polymorphProperties/PolymorphProperties';
 import Button from '../../components/button/Button';
 import linkOutIcon from '../../assets/images/icons/link-out.svg';
+import { MyBattlesHistoryDummyData } from '../../utils/fixtures/MyBattlesHistoryDummyData.js';
+import BattleHistoryTable from '../../components/tables/battleHostoryTable/BattleHistoryTable';
+import NoDataFound from '../../components/noDataFound/noDataFound';
 
 const PolymorphPage = () => {
   const history = useHistory();
@@ -73,12 +76,20 @@ const PolymorphPage = () => {
               <Tabs items={tabs} />
               {propertiesTabSelected ? (
                 <PolymorphProperties />
+              ) : MyBattlesHistoryDummyData.length ? (
+                <BattleHistoryTable data={MyBattlesHistoryDummyData} />
               ) : (
-                <div className="battle-history">battle history</div>
+                <NoDataFound title="" desc="You have no battle history" btnText="" />
               )}
             </div>
             <div className="option--buttons">
-              <Button variant="primary" text="Battle now" />
+              <Button
+                variant="primary"
+                text="Battle now"
+                onClick={() => {
+                  history.push('/battlegrounds');
+                }}
+              />
               <Button variant="secondary" text="View on Opensea" icon={linkOutIcon} />
             </div>
           </div>
