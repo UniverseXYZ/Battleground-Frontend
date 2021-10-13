@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Popup from 'reactjs-popup';
 import fighterImage from '../../../assets/images/polymorph-fighter-little.png';
 import subtractLeft from '../../../assets/images/icons/subtract-left-icon.svg';
 import subtractRight from '../../../assets/images/icons/subtract-right-icon.svg';
@@ -7,6 +8,8 @@ import attackIcon from '../../../assets/images/icons/attack-image.svg';
 import defenceIcon from '../../../assets/images/icons/defence-image.svg';
 import vIcon from '../../../assets/images/icons/v-icon.svg';
 import './FighterDescription.scss';
+import WinPopup from '../../popups/winPopup/WinPopup';
+import LosePopup from '../../popups/losePopup/LosePopup';
 
 const FighterDescription = () => {
   const [fightsHistory, setFightsHystory] = useState([
@@ -18,6 +21,9 @@ const FighterDescription = () => {
     { opponent: '0x000mark...', result: 'win', ammount: 1 },
   ]);
   const [mobileShow, setMobileShow] = useState(false);
+  const [showLosePopup, setShowLosePopup] = useState(false);
+  const [showWinPopup, setShowWinPopup] = useState(false);
+
   return (
     <div
       className={
@@ -98,7 +104,12 @@ const FighterDescription = () => {
               <div className="line" />
               <div style={{ marginBottom: '10px' }} />
               {fightsHistory.map((fight) => (
-                <tr>
+                <tr
+                  aria-hidden="true"
+                  onClick={() =>
+                    fight.result === 'win' ? setShowWinPopup(true) : setShowLosePopup(true)
+                  }
+                >
                   <td className="opponent">{fight.opponent}</td>
                   <td className="win__loss">
                     <div className={fight.result}>{fight.result}</div>
@@ -110,6 +121,12 @@ const FighterDescription = () => {
           </table>
         </div>
       </div>
+      <Popup modal lockScroll open={showWinPopup} closeOnDocumentClick={false}>
+        <WinPopup close={() => setShowWinPopup(false)} />
+      </Popup>
+      <Popup modal lockScroll open={showLosePopup} closeOnDocumentClick={false}>
+        <LosePopup close={() => setShowLosePopup(false)} />
+      </Popup>
     </div>
   );
 };
