@@ -5,6 +5,7 @@
   position: relative;
   max-width: 372px;
   width: 100%;
+  height: fit-content;
 
   .left--wrapper {
     position: absolute;
@@ -249,8 +250,8 @@
             background: rgba(255, 255, 255, 0.2);
             width: 12px;
             height: 1px;
-            top: 3.7px;
-            left: -2px;
+            top: 3.4px;
+            left: -2.3px;
             transform: rotate(-45deg);
           }
           &::after {
@@ -259,9 +260,9 @@
             background: rgba(255, 255, 255, 0.2);
             width: 12px;
             height: 1px;
-            bottom: 4px;
-            right: -2.5px;
-            transform: rotate(-42deg);
+            bottom: 3.4px;
+            right: -2.3px;
+            transform: rotate(-45deg);
           }
         }
       }
@@ -286,13 +287,14 @@
           line-height: 10px;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.4);
-          text-align: left;
+          text-align: center;
 
           th {
             padding-bottom: 12px;
           }
           :first-child {
             padding-left: 30px;
+            text-align: left;
           }
 
           :last-child {

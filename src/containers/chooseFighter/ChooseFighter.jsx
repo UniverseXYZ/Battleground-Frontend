@@ -3,6 +3,8 @@ import { useLocation } from 'react-router';
 import attackIcon from '../../assets/images/icons/attack-icon.svg';
 import defenceIcon from '../../assets/images/icons/defence-icon.svg';
 import soundIcon from '../../assets/images/icons/sound-icon.svg';
+import AttackButton from '../../components/button/attackButton/AttackButton';
+import DefenceButton from '../../components/button/defenceButton/DefenceButton';
 import Fighter from '../../components/chooseFighter/fighter/Fighter';
 import FighterDescription from '../../components/chooseFighter/fighterDescription/FighterDescription';
 
@@ -15,36 +17,12 @@ const ChooseFighter = () => {
       <Fighter />
       <FighterDescription />
       <div className="fighter__buttons__tablet">
-        <div className="attack__button__wrapper">
-          <div className="primary__box__shadow">
-            <button type="button">
-              <img src={attackIcon} alt="Attack" /> Attack
-            </button>
-          </div>
-        </div>
-        <div className="defence__button__wrapper">
-          <div className="primary__box__shadow">
-            <button type="button">
-              <img src={defenceIcon} alt="Defence" /> Defence
-            </button>
-          </div>
-        </div>
+        <AttackButton icon={attackIcon} text="Attack" />
+        <DefenceButton icon={defenceIcon} text="Defence" />
       </div>
       <div className="fighter__buttons__mobile">
-        <div className="attack__button__wrapper">
-          <div className="primary__box__shadow">
-            <button type="button">
-              <img src={attackIcon} alt="Attack" /> Attack
-            </button>
-          </div>
-        </div>
-        <div className="defence__button__wrapper">
-          <div className="primary__box__shadow">
-            <button type="button">
-              <img src={defenceIcon} alt="Defence" /> Defence
-            </button>
-          </div>
-        </div>
+        <AttackButton icon={attackIcon} text="Attack" />
+        <DefenceButton icon={defenceIcon} text="Defence" />
       </div>
       <img src={soundIcon} alt="Audio" className="audio__icon" />
     </div>
