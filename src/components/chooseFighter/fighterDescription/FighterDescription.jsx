@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
+import AttackProgress from '../../attackProgress/AttackProgress';
+import DefenseProgress from '../../defenseProgress/DefenseProgress';
 import fighterImage from '../../../assets/images/polymorph-fighter-little.png';
 import subtractLeft from '../../../assets/images/icons/subtract-left-icon.svg';
 import subtractRight from '../../../assets/images/icons/subtract-right-icon.svg';
 import arrowUp from '../../../assets/images/icons/arrow-up.svg';
-import attackIcon from '../../../assets/images/icons/attack-image.svg';
-import defenceIcon from '../../../assets/images/icons/defence-image.svg';
 import vIcon from '../../../assets/images/icons/v-icon.svg';
 import './FighterDescription.scss';
 import WinPopup from '../../popups/winPopup/WinPopup';
 import LosePopup from '../../popups/losePopup/LosePopup';
+import BattleHistoryTable from '../../tables/battleHostoryTable/BattleHistoryTable';
+import { MyBattlesHistoryDummyData } from '../../../utils/fixtures/MyBattlesHistoryDummyData.js';
 
 const FighterDescription = () => {
   const [fightsHistory, setFightsHystory] = useState([
@@ -49,34 +51,8 @@ const FighterDescription = () => {
             </div>
             <h3 className="title">Glenn #4422</h3>
           </div>
-          <div className="fighter__desc__attack">
-            <img src={attackIcon} alt="Attack" />
-            <div className="attack__div">
-              <div className="attack__head">
-                <p>Attack</p>
-                <p>150-240</p>
-              </div>
-              <div className="attack__bar">
-                <div className="fill__transparent">
-                  <div className="filled" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="fighter__desc__defence">
-            <img src={defenceIcon} alt="Defence" />
-            <div className="defence__div">
-              <div className="defence__head">
-                <p>Defence</p>
-                <p>250-300</p>
-              </div>
-              <div className="defence__bar">
-                <div className="fill__transparent">
-                  <div className="filled" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <AttackProgress />
+          <DefenseProgress />
           <div className="fights__statistics">
             <div className="statistics">
               <h2>8</h2>
@@ -92,34 +68,7 @@ const FighterDescription = () => {
             </div>
           </div>
         </div>
-        <div className="fight__history">
-          <h2>Fight history</h2>
-          <table className="hystory__list">
-            <thead>
-              <th>Opponent</th>
-              <th>Win/Loss</th>
-              <th>Wager Amount</th>
-            </thead>
-            <tbody>
-              <div className="line" />
-              <div style={{ marginBottom: '10px' }} />
-              {fightsHistory.map((fight) => (
-                <tr
-                  aria-hidden="true"
-                  onClick={() =>
-                    fight.result === 'win' ? setShowWinPopup(true) : setShowLosePopup(true)
-                  }
-                >
-                  <td className="opponent">{fight.opponent}</td>
-                  <td className="win__loss">
-                    <div className={fight.result}>{fight.result}</div>
-                  </td>
-                  <td className="wager__amount">{fight.ammount} ETH</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <BattleHistoryTable data={MyBattlesHistoryDummyData} />
       </div>
       <Popup modal lockScroll open={showWinPopup} closeOnDocumentClick={false}>
         <WinPopup close={() => setShowWinPopup(false)} />
