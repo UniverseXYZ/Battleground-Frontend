@@ -1,0 +1,71 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.pagination--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+
+  .pagination {
+    display: flex;
+
+    li {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+      &.previous {
+        a {
+          padding: 0;
+          img {
+            filter: invert(1);
+          }
+        }
+      }
+
+      &.next {
+        a {
+          padding: 0;
+          img {
+            filter: invert(1);
+          }
+        }
+      }
+
+      &.disabled {
+        background: rgba(255, 255, 255, 0.15);
+        opacity: 0.5;
+        cursor: not-allowed;
+        a {
+          cursor: not-allowed;
+        }
+      }
+
+      &.active {
+        background: linear-gradient(#1a2548, #1a2548) padding-box,
+          linear-gradient(to right, #bceb00, #00eaea) border-box;
+        border: 1px solid transparent;
+      }
+
+      a {
+        padding: 5px 10px;
+        cursor: pointer;
+        font-family: $spaceGroteskFont;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        color: $white;
+      }
+    }
+  }
+
+  @include sm {
+    justify-content: center;
+  }
+}
