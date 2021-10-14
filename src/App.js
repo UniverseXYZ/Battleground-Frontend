@@ -23,12 +23,15 @@ const App = () => {
     window.scrollTo(0, 0);
     switch (location.pathname) {
       case '/':
+        setHideFooter(false);
         setGoPreviousPage({ text: '', path: null });
         break;
       case '/battlegrounds':
+        setHideFooter(false);
         setGoPreviousPage({ text: 'Home', path: '/' });
         break;
       case '/choose-fighter':
+        setHideFooter(true);
         setGoPreviousPage({ text: 'Battlegrounds', path: '/battlegrounds' });
         break;
       case '/battle-victory':
@@ -38,6 +41,7 @@ const App = () => {
         setHideFooter(true);
         break;
       default:
+        setHideFooter(false);
         setGoPreviousPage({ text: '', path: '/' });
     }
   }, [location]);
