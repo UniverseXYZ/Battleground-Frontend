@@ -12,6 +12,7 @@ import PolymorphPage from './containers/polymorphPage/PolymorphPage.jsx';
 import MyBattlesHistory from './containers/myBattlesHistory/MyBattlesHistory.jsx';
 import BattleVictoryPage from './containers/battleVictoryPage/BattleVictoryPage';
 import BattleLosePage from './containers/battleLosePage/BattleLosePage';
+import BattleStep from './components/battleStep/BattleStep';
 
 const App = () => {
   const location = useLocation();
@@ -58,6 +59,7 @@ const App = () => {
       <Header />
       <div>
         <Switch>
+          <Route exact path="/battle-step" component={() => <BattleStep />} />
           <Route exact path="/" component={() => <LandingPage />} />
           <Route exact path="/battlegrounds" component={() => <Battlegrounds />} />
           <Route exact path="/my-polymorphs" component={() => <MyPolymorphs />} />

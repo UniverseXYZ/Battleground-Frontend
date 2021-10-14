@@ -1,0 +1,276 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.battle-step {
+ background-image: url(../../assets/images/battleStep/step-bg.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ min-height: 730px;
+ position: relative;
+ .figher-side, .opponent-side{
+    position: absolute;
+    width: 49%;
+    height: 95px;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    h1{
+        font-family: $orbitronFont;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 28px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    p{
+        font-family: $spaceGroteskFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    @include md{
+        width: 100%;
+    }
+    @media (min-width: 1025px) and (max-width: 1200px){
+        width: 49%;
+    }
+    
+}
+.inside-border-div{
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 68px;
+
+    .left-border-effect{
+        margin-right: 4%;
+        @media (min-width: 1351px) and (max-width: 1650px){
+            transform: rotateY(35deg);
+            margin-right: 3.5%;
+        }
+        @media (min-width: 1201px) and (max-width: 1350px){
+            margin-right: 3%;
+            transform: rotateY(45deg);
+        }
+
+        @media (min-width: 1025px) and (max-width: 1200px){
+            transform: rotateY(50deg);
+            margin-right: 2.6%;
+
+        }
+
+    }
+    .right-border-effect{
+        margin-left: 4%;
+        @media (min-width: 1351px) and (max-width: 1650px){
+            margin-left: 3.5%;
+            transform: rotateY(35deg);
+        }
+
+        @media (min-width: 1201px) and (max-width: 1350px){
+            margin-left: 3%;
+            transform: rotateY(45deg);
+        }
+
+        @media (min-width: 1025px) and (max-width: 1200px){
+            transform: rotateY(50deg);
+            margin-left: 2.6%;
+        }
+    }
+    @include md{
+        display: none;
+    }
+    @media (min-width: 1025px) and (max-width: 1200px){
+        display: block;
+    }
+}
+
+    .opponent-side{
+      right: 0;
+      clip-path: polygon(0% 0%, calc(100% - 0px) 0%, 100% 0px, 100% 100%, 0px 100%, 10% calc(100% - 0px));  
+      
+    @include md{
+        bottom: 0;
+        top: unset;
+        clip-path:unset;
+    }
+    @media (min-width: 1025px) and (max-width: 1200px){
+        top: 0;
+        bottom: unset;
+        clip-path: polygon(0% 0%, calc(100% - 0px) 0%, 100% 0px, 100% 100%, 0px 100%, 10% calc(100% - 0px));  
+    }
+    }
+    .figher-side{
+      left: 0;
+      clip-path: polygon(0% 0%, calc(100% - 0%) 0%, 90% 100%, 100% 100%, 0px 100%, 0% calc(100% - 0px));
+    @include md{
+      clip-path:unset;  
+    }
+    @media (min-width: 1025px) and (max-width: 1200px){
+        top: 0;
+        bottom: unset;
+        clip-path: polygon(0% 0%, calc(100% - 0%) 0%, 90% 100%, 100% 100%, 0px 100%, 0% calc(100% - 0px));
+    }
+    }
+    .you-opponent{
+        margin-top: 2%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        .figher-img{
+            background-image: url(../../assets/images/battleStep/step-figure1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 400px;
+            height: 400px;
+            border-radius: 6px;                            
+            @include md{
+                width: 340px;
+                height: 340px;
+            }                
+            @include sm{
+                width: 200px;
+                height: 200px;
+            } 
+            @media (min-width: 1025px) and (max-width: 1200px){
+                width: 200px;
+                height: 200px;
+            }          
+        }
+        .opponent-img{
+            background-image: url(../../assets/images/battleStep/rectangle.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 400px;
+            height: 400px;
+            border-radius: 6px;   
+            @include md{
+                width: 340px;
+                height: 340px;
+            } 
+            @include sm{
+                width: 200px;
+                height: 200px;
+            }       
+            @media (min-width: 1025px) and (max-width: 1200px){
+                width: 200px;
+                height: 200px;
+            }                  
+        }
+        .have-opponent{
+            background-image: url(../../assets/images/battleStep/opponent-figure.png);
+        }
+        h1{
+            font-family: $orbitronFont;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 60px;
+            line-height: 75px;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 0 80px;
+            @include md {
+                font-size: 40px;
+            }
+            @include sm {
+                font-size: 30px;
+            }
+            @media (min-width: 1025px) and (max-width: 1200px){
+                font-size: 48px;
+            }
+        }
+        @include md {
+            display: grid;
+        }
+        @media (min-width: 1025px) and (max-width: 1200px){
+            display: flex;
+        }
+    }
+    &.battle-boom {
+       .figher-side, .opponent-side{
+           display: none;
+       }
+       .inside-border-div{
+        display: none;
+        }
+       .you-opponent{
+           position: relative;
+           min-height: 400px;
+           width: 100%;
+           padding: 0 20%;
+           .figher-img, .opponent-img{
+            width: 361px;
+            height: 361px;
+            @include md {
+                width: 340px;
+                height: 340px;
+                transform: rotate(-15deg)!important;
+            }
+            @include sm {
+                width: 200px;
+                height: 200px;
+            }
+            @media (min-width: 1025px) and (max-width: 1200px){
+                width: 170px;
+                height: 170px;
+            }
+           }
+           .figher-img{
+                transform: rotate(-13.36deg);
+                margin-right: 2.5%;
+                @include md {
+                margin-bottom: 15%;
+            }
+        }
+        .opponent-img{
+            transform: rotate(10.77deg);
+            margin-left: 2.5%;
+            @include md {
+                margin-top: 15%;
+                margin-left: -3%;
+                }
+           }
+           .battle-boom-img{
+            width: 442px;
+            height: 313px;
+            z-index: 100;
+            position: absolute;
+            bottom: 36%;
+            @include md {
+                bottom: 30%;
+                left: 0;
+                right: 0;
+                margin: auto;              
+            }
+            @include sm {
+                width: 296px;
+                height: 209px;
+            }
+            @media (min-width: 1025px) and (max-width: 1200px){
+                width: 224px;
+                height: 159px;
+                bottom: 32%;
+            }
+           }
+           h1{
+               display: none;
+           }
+           @media (min-width: 1025px) and (max-width: 1200px){
+           margin-top: unset;
+           min-height: 200px;
+            }
+       }
+    }
+    @media (min-width: 1025px) and (max-width: 1200px){
+    min-height: 450px;
+    }
+}
