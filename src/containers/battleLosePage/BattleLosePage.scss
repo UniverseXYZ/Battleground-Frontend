@@ -1,7 +1,7 @@
 @import "../../assets/scss/variables";
 @import "../../assets/scss/mixins";
 
-.victory--page {
+.lose--page {
   height: calc(100vh - 70px);
   position: relative;
   background-image: url("../../assets/images/victoryLosePage/victory-page-bg.png");
@@ -12,8 +12,8 @@
   h1 {
     margin: 0;
   }
-  .victory--bg--effect {
-    background: radial-gradient(50% 50% at 50% 50%, #29756c 0%, #121a33 100%);
+  .lose--bg--effect {
+    background: radial-gradient(50% 50% at 50% 50%, #752929 0%, #121a33 100%);
     opacity: 0.9;
     position: absolute;
     top: 0;
@@ -22,9 +22,9 @@
     height: 100%;
     pointer-events: none;
   }
-  .victory--page--header {
+  .lose--page--header {
     position: relative;
-    background-image: url("../../assets/images/victoryLosePage/victory-title-bg.png");
+    background-image: url("../../assets/images/victoryLosePage/lose-title-bg.png");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
@@ -44,38 +44,38 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #ffffff;
-      text-shadow: 0px 0px 40px #00fff0;
+      text-shadow: 0px 0px 40px #ff5a5a;
       @include sm {
         font-size: 26px;
         line-height: 33px;
       }
     }
     @include md {
-      background-image: url("../../assets/images/victoryLosePage/victory-title-tablet-bg.png");
+      background-image: url("../../assets/images/victoryLosePage/lose-title-tablet-bg.png");
     }
     @include xs {
-      background-image: url("../../assets/images/victoryLosePage/victory-title-mobile-bg.png");
+      background-image: url("../../assets/images/victoryLosePage/lose-title-mobile-bg.png");
       min-height: 72px;
       background-size: contain;
       padding: 0;
     }
   }
-  .victory--page--cards--section {
+  .lose--page--cards--section {
     z-index: 1;
     display: grid;
     grid-template-columns: 480px 480px;
     justify-content: center;
     grid-gap: 52px;
     padding: 58px 0 65px;
-    .my--victory--card {
+    .my--lose--card {
       z-index: 1;
       position: relative;
-      background-image: url("../../assets/images/victoryLosePage/victory-card-back.png");
+      background-image: url("../../assets/images/victoryLosePage/lose-card-back.png");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
       max-height: 238px;
-      .my--victory--card--content {
+      .my--lose--card--content {
         display: grid;
         grid-template-columns: 158px 1fr;
         grid-gap: 30px;
@@ -96,7 +96,7 @@
             border-radius: 3px;
           }
         }
-        .my--victory--card--options {
+        .my--lose--card--options {
           > h3 {
             font-family: $orbitronFont;
             font-style: normal;
@@ -207,11 +207,11 @@
         background-size: contain;
       }
     }
-    .opponent--victory--card {
+    .opponent--lose--card {
       z-index: 1;
       position: relative;
       max-height: 238px;
-      .opponent--victory--card--content {
+      .opponent--lose--card--content {
         display: grid;
         grid-template-columns: 158px 1fr;
         grid-gap: 30px;
@@ -224,7 +224,7 @@
             border-radius: 3px;
           }
         }
-        .opponent--victory--card--options {
+        .opponent--lose--card--options {
           > h3 {
             font-family: $orbitronFont;
             font-style: normal;
@@ -343,7 +343,7 @@
       padding-bottom: 68px;
     }
   }
-  .victory--page--rewords {
+  .lose--page--rewords {
     position: relative;
     z-index: 2;
     .rewords--title {
@@ -395,7 +395,7 @@
       }
     }
   }
-  .victory--buttons--section {
+  .lose--buttons--section {
     z-index: 2;
     position: absolute;
     width: 100%;
