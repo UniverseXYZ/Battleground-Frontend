@@ -11,6 +11,7 @@ import ChooseFighter from './containers/chooseFighter/ChooseFighter.jsx';
 import PolymorphPage from './containers/polymorphPage/PolymorphPage.jsx';
 import MyBattlesHistory from './containers/myBattlesHistory/MyBattlesHistory.jsx';
 import BattleVictoryPage from './containers/battleVictoryPage/BattleVictoryPage';
+import BattleLosePage from './containers/battleLosePage/BattleLosePage';
 
 const App = () => {
   const location = useLocation();
@@ -31,6 +32,9 @@ const App = () => {
         setGoPreviousPage({ text: 'Battlegrounds', path: '/battlegrounds' });
         break;
       case '/battle-victory':
+        setHideFooter(true);
+        break;
+      case '/battle-lose':
         setHideFooter(true);
         break;
       default:
@@ -57,6 +61,7 @@ const App = () => {
           <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
           <Route exact path="/polymorph/:id" component={() => <PolymorphPage />} />
           <Route exact path="/battle-victory" component={() => <BattleVictoryPage />} />
+          <Route exact path="/battle-lose" component={() => <BattleLosePage />} />
           <Route path="*" component={() => <LandingPage />} />
         </Switch>
       </div>
