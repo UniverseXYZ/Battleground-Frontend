@@ -10,11 +10,13 @@ import MyPolymorphs from './containers/myPolymorphs/MyPolymorphs.jsx';
 import ChooseFighter from './containers/chooseFighter/ChooseFighter.jsx';
 import PolymorphPage from './containers/polymorphPage/PolymorphPage.jsx';
 import MyBattlesHistory from './containers/myBattlesHistory/MyBattlesHistory.jsx';
+import BattleVictoryPage from './containers/battleVictoryPage/BattleVictoryPage';
 
 const App = () => {
   const location = useLocation();
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [goPreviousPage, setGoPreviousPage] = useState({ text: '', path: '' });
+  const [hideFooter, setHideFooter] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,6 +29,9 @@ const App = () => {
         break;
       case '/choose-fighter':
         setGoPreviousPage({ text: 'Battlegrounds', path: '/battlegrounds' });
+        break;
+      case '/battle-victory':
+        setHideFooter(true);
         break;
       default:
         setGoPreviousPage({ text: '', path: '/' });
@@ -51,10 +56,11 @@ const App = () => {
           <Route exact path="/my-battles-history" component={() => <MyBattlesHistory />} />
           <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
           <Route exact path="/polymorph/:id" component={() => <PolymorphPage />} />
+          <Route exact path="/battle-victory" component={() => <BattleVictoryPage />} />
           <Route path="*" component={() => <LandingPage />} />
         </Switch>
       </div>
-      <Footer />
+      {!hideFooter && <Footer />}
     </AppContext.Provider>
   );
 };
