@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from '3d-react-carousal';
-import Coverflow from 'react-coverflow';
+import { useHistory } from 'react-router-dom';
 import eth from '../../../assets/images/icons/eth-white-icon-small.svg';
 import attackIcon from '../../../assets/images/icons/attack-icon.svg';
 import defenceIcon from '../../../assets/images/icons/defence-icon.svg';
@@ -9,6 +9,7 @@ import AttackButton from '../../button/attackButton/AttackButton';
 import './Fighter.scss';
 
 const Fighter = () => {
+  const history = useHistory();
   const slides = [
     <img src="https://storage.googleapis.com/polymorph-images/190516033012210100.jpg" alt="1" />,
     <img src="https://storage.googleapis.com/polymorph-images/151221083106060007.jpg" alt="2" />,
@@ -43,8 +44,16 @@ const Fighter = () => {
         />
       </div>
       <div className="fighter__buttons">
-        <AttackButton icon={attackIcon} text="Attack" />
-        <DefenceButton icon={defenceIcon} text="Defence" />
+        <AttackButton
+          icon={attackIcon}
+          text="Attack"
+          onClick={() => history.push('/battle-step')}
+        />
+        <DefenceButton
+          icon={defenceIcon}
+          text="Defence"
+          onClick={() => history.push('/battle-step')}
+        />
       </div>
     </div>
   );

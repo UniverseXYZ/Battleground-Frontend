@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './BattleStep.scss';
 import leftsideBorder from '../../assets/images/battleStep/leftside_battle.png';
 import rightideBorder from '../../assets/images/battleStep/rightside_battle.png';
 import battleBoom from '../../assets/images/battleStep/battle-boom.png';
 
 const BattleStep = () => {
+  const history = useHistory();
   const [opponent, setOpponent] = useState(false);
   const [boom, setBoom] = useState(false);
 
@@ -24,6 +26,15 @@ const BattleStep = () => {
     if (opponent) {
       timeout = setTimeout(() => {
         setBoom(true);
+        const randomPages = ['win', 'lose'];
+        const goToRandomPage = randomPages[Math.floor(Math.random() * randomPages.length)];
+        setTimeout(() => {
+          if (goToRandomPage === 'win') {
+            history.push('/battle-victory');
+          } else {
+            history.push('/battle-lose');
+          }
+        }, 2000);
       }, 6000);
     }
 

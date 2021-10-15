@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 import attackIcon from '../../assets/images/icons/attack-icon.svg';
 import defenceIcon from '../../assets/images/icons/defence-icon.svg';
 import soundIcon from '../../assets/images/icons/sound-icon.svg';
@@ -10,6 +10,7 @@ import FighterDescription from '../../components/chooseFighter/fighterDescriptio
 
 const ChooseFighter = () => {
   const location = useLocation();
+  const history = useHistory();
   const battleground = location.state ? location.state.battleground : null;
 
   return (
@@ -17,12 +18,28 @@ const ChooseFighter = () => {
       <Fighter />
       <FighterDescription />
       <div className="fighter__buttons__tablet">
-        <AttackButton icon={attackIcon} text="Attack" />
-        <DefenceButton icon={defenceIcon} text="Defence" />
+        <AttackButton
+          icon={attackIcon}
+          text="Attack"
+          onClick={() => history.push('/battle-step')}
+        />
+        <DefenceButton
+          icon={defenceIcon}
+          text="Defence"
+          onClick={() => history.push('/battle-step')}
+        />
       </div>
       <div className="fighter__buttons__mobile">
-        <AttackButton icon={attackIcon} text="Attack" />
-        <DefenceButton icon={defenceIcon} text="Defence" />
+        <AttackButton
+          icon={attackIcon}
+          text="Attack"
+          onClick={() => history.push('/battle-step')}
+        />
+        <DefenceButton
+          icon={defenceIcon}
+          text="Defence"
+          onClick={() => history.push('/battle-step')}
+        />
       </div>
       <img src={soundIcon} alt="Audio" className="audio__icon" />
     </div>

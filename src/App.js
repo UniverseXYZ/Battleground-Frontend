@@ -41,6 +41,10 @@ const App = () => {
       case '/battle-lose':
         setHideFooter(true);
         break;
+      case '/battle-step':
+        setHideFooter(true);
+        setGoPreviousPage({ text: '', path: '/' });
+        break;
       default:
         setHideFooter(false);
         setGoPreviousPage({ text: '', path: '/' });
@@ -59,13 +63,13 @@ const App = () => {
       <Header />
       <div>
         <Switch>
-          <Route exact path="/battle-step" component={() => <BattleStep />} />
           <Route exact path="/" component={() => <LandingPage />} />
           <Route exact path="/battlegrounds" component={() => <Battlegrounds />} />
           <Route exact path="/my-polymorphs" component={() => <MyPolymorphs />} />
+          <Route exact path="/polymorph/:id" component={() => <PolymorphPage />} />
           <Route exact path="/my-battles-history" component={() => <MyBattlesHistory />} />
           <Route exact path="/choose-fighter" component={() => <ChooseFighter />} />
-          <Route exact path="/polymorph/:id" component={() => <PolymorphPage />} />
+          <Route exact path="/battle-step" component={() => <BattleStep />} />
           <Route exact path="/battle-victory" component={() => <BattleVictoryPage />} />
           <Route exact path="/battle-lose" component={() => <BattleLosePage />} />
           <Route path="*" component={() => <LandingPage />} />
